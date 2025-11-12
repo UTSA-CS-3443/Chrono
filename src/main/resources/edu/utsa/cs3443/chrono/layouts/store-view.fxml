@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Checklist" />
+            <Button layoutX="10.0" layoutY="95.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Task Timer" />
+            <Button layoutX="10.0" layoutY="120.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Creature" />
+            <Button layoutX="10.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Themes" />
+            <Button layoutX="10.0" layoutY="170.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Store" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <AnchorPane prefHeight="20.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="112.0" layoutY="6.0" text="Store" />
+            <Label layoutX="31.0" layoutY="6.0" text="Chrono" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </top>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="377.0" prefWidth="173.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@coin.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="x 0" />
+               </children>
+            </HBox>
+            <Label text="Daily Tasks" />
+            <Label text="Complete these for 100 coins!">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="58.0" prefWidth="173.0">
+                     <children>
+                        <Label text="Task 1" />
+                        <ImageView fitHeight="18.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="58.0" prefWidth="173.0">
+                     <children>
+                        <Label text="Task 2" />
+                        <ImageView fitHeight="18.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="68.0" prefHeight="58.0" prefWidth="173.0">
+                     <children>
+                        <Label text="Task 3" />
+                        <ImageView fitHeight="18.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <ProgressBar prefWidth="200.0" progress="0.0" />
+            <Label text="Time left: 24 hrs, 0 mins, 0 secs" />
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
