@@ -5,4 +5,5 @@ module edu.utsa.cs3443.chrono {
 
     opens edu.utsa.cs3443.chrono to javafx.fxml;
     exports edu.utsa.cs3443.chrono;
+
 }
