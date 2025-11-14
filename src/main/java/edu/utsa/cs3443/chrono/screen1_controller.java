@@ -3,7 +3,7 @@ package edu.utsa.cs3443.chrono;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class screen1_controller {
     @FXML
     private Label welcomeText;
 

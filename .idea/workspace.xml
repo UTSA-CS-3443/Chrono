@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="Initial commit - Created most basic files">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/screen0_default.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/screen2_timer.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/screen3_creature.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/screen4_themes.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ChronoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ChronoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/CreatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/CreatureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/screen1_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/screen5_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/screen1_checklist.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/store-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/screen5_store.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +25,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -28,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,12 +44,12 @@
     &quot;assignee&quot;: &quot;Matt-Egg&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Matt-Egg/Chrono.git&quot;,
-    &quot;accountId&quot;: &quot;1b37e6dd-5ea3-499c-9950-baeec123417f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/UTSA-CS-3443/Chrono",
+    "accountId": "045f964a-b7fa-4b14-a31f-04a5ef1fd3e1"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -56,6 +61,9 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="35O2VRgITYtUY0jTmhr2Re9VTfL" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,10 +74,20 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "Fabian__screens",
     "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Matthew/IdeaProjects/Chrono"
+    "last_opened_file_path": "A:/Uni/In-Progress/Apps_prog/ProjectFin/Chrono",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -77,16 +95,13 @@
       <recent name="C:\Users\Matthew\IdeaProjects\Chrono\src\main\resources\edu\utsa\cs3443\chrono\layouts" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -95,6 +110,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762966825122</updated>
+      <workItem from="1763075452687" duration="2722000" />
     </task>
     <task id="LOCAL-00001" summary="Created most basic files">
       <option name="closed" value="true" />
@@ -114,6 +130,9 @@
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created most basic files" />
