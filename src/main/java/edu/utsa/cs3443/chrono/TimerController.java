@@ -34,7 +34,7 @@ public class TimerController {
      * @param event add time button click
      */
     @FXML
-    void addTime(ActionEvent event) {
+    void plusSeconds(ActionEvent event) {
 
         int totalSeconds = timer.getHours() * 3600
                 + timer.getMinutes() * 60
@@ -51,6 +51,97 @@ public class TimerController {
 
         timerText.setText(timer.getCurrentTime());
 
+    }
+
+    @FXML
+    void minusHours(ActionEvent event) {
+        int totalSeconds = timer.getHours() * 3600
+                + timer.getMinutes() * 60
+                + timer.getSeconds();
+
+        if(totalSeconds - 3600 >= 0){
+            totalSeconds -= 3600;
+            timer.setHours(totalSeconds / 3600);
+            timer.setMinutes((totalSeconds % 3600) / 60);
+            timer.setSeconds(totalSeconds % 60);
+        } else{
+
+        }
+
+        timerText.setText(timer.getCurrentTime());
+    }
+
+    @FXML
+    void minusMinutes(ActionEvent event) {
+        int totalSeconds = timer.getHours() * 3600
+                + timer.getMinutes() * 60
+                + timer.getSeconds();
+
+        if(totalSeconds - 300 >= 0){
+            totalSeconds -= 300;
+            timer.setHours(totalSeconds / 3600);
+            timer.setMinutes((totalSeconds % 3600) / 60);
+            timer.setSeconds(totalSeconds % 60);
+        } else{
+
+        }
+
+        timerText.setText(timer.getCurrentTime());
+    }
+
+    @FXML
+    void minusSeconds(ActionEvent event) {
+
+        int totalSeconds = timer.getHours() * 3600
+                + timer.getMinutes() * 60
+                + timer.getSeconds();
+
+        if(totalSeconds - 5 >= 0){
+            totalSeconds -= 5;
+            timer.setHours(totalSeconds / 3600);
+            timer.setMinutes((totalSeconds % 3600) / 60);
+            timer.setSeconds(totalSeconds % 60);
+        } else{
+
+        }
+
+        timerText.setText(timer.getCurrentTime());
+    }
+
+    @FXML
+    void plusHours(ActionEvent event) {
+        int totalSeconds = timer.getHours() * 3600
+                + timer.getMinutes() * 60
+                + timer.getSeconds()
+                + 3600;
+
+        int hours = totalSeconds / 3600;
+        int minutes = (totalSeconds % 3600) / 60;
+        int seconds = totalSeconds % 60;
+
+        timer.setHours(hours);
+        timer.setMinutes(minutes);
+        timer.setSeconds(seconds);
+
+        timerText.setText(timer.getCurrentTime());
+    }
+
+    @FXML
+    void plusMinutes(ActionEvent event) {
+        int totalSeconds = timer.getHours() * 3600
+                + timer.getMinutes() * 60
+                + timer.getSeconds()
+                + 300;
+
+        int hours = totalSeconds / 3600;
+        int minutes = (totalSeconds % 3600) / 60;
+        int seconds = totalSeconds % 60;
+
+        timer.setHours(hours);
+        timer.setMinutes(minutes);
+        timer.setSeconds(seconds);
+
+        timerText.setText(timer.getCurrentTime());
     }
 
     private void tick() {
