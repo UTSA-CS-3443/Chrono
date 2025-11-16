@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.TimerController">
+   <children>
+      <Label fx:id="timerText" layoutX="270.0" layoutY="93.0" prefHeight="44.0" prefWidth="87.0" text="Label" />
+      <Button layoutX="135.0" layoutY="234.0" mnemonicParsing="false" onAction="#startTimer" text="Start" />
+      <Button layoutX="347.0" layoutY="235.0" mnemonicParsing="false" onAction="#addTime" text="Add" />
+      <Button layoutX="236.0" layoutY="236.0" mnemonicParsing="false" onAction="#pauseTimer" text="Pause" />
+      <Button layoutX="440.0" layoutY="235.0" mnemonicParsing="false" onAction="#clearTimer" text="clear" />
+   </children>
+</AnchorPane>
