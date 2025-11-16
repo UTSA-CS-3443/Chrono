@@ -11,32 +11,32 @@
    <children>
       <HBox alignment="CENTER" layoutX="130.0" layoutY="166.0" prefHeight="100.0" prefWidth="333.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#plusSeconds" prefHeight="25.0" prefWidth="45.0" text="+5s">
+            <Button fx:id="plusSecondsButton" mnemonicParsing="false" onAction="#plusSeconds" prefHeight="25.0" prefWidth="45.0" text="+5s">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#minusSeconds" prefHeight="25.0" prefWidth="45.0" text="-5s">
+            <Button fx:id="minusSecondsButton" mnemonicParsing="false" onAction="#minusSeconds" prefHeight="25.0" prefWidth="45.0" text="-5s">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#plusMinutes" prefHeight="25.0" prefWidth="45.0" text="+5m">
+            <Button fx:id="plusMinutesButton" mnemonicParsing="false" onAction="#plusMinutes" prefHeight="25.0" prefWidth="45.0" text="+5m">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#minusMinutes" prefHeight="25.0" prefWidth="45.0" text="-5m">
+            <Button fx:id="minusMinutesButton" mnemonicParsing="false" onAction="#minusMinutes" prefHeight="25.0" prefWidth="45.0" text="-5m">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#plusHours" prefHeight="25.0" prefWidth="45.0" text="+1hr">
+            <Button fx:id="plusHoursButton" mnemonicParsing="false" onAction="#plusHours" prefHeight="25.0" prefWidth="45.0" text="+1hr">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#minusHours" prefHeight="25.0" prefWidth="45.0" text="-1hr" />
+            <Button fx:id="minusHoursButton" mnemonicParsing="false" onAction="#minusHours" prefHeight="25.0" prefWidth="45.0" text="-1hr" />
          </children>
       </HBox>
       <HBox alignment="CENTER" layoutX="129.0" layoutY="266.0" prefHeight="100.0" prefWidth="329.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="130.0">
@@ -58,5 +58,6 @@
          <font>
             <Font name="Courier New" size="24.0" />
          </font></Label>
+      <Label fx:id="errorMessageLabel" alignment="CENTER" layoutX="285.0" layoutY="149.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
    </children>
 </AnchorPane>

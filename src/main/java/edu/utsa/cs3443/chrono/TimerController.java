@@ -5,13 +5,42 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
 
+/**
+ * controller class for operations on timer screen
+ *
+ * @author Davis Howe
+ */
 public class TimerController {
 
     @FXML
     private Label timerText;
+
+    @FXML
+    private Button minusHoursButton;
+
+    @FXML
+    private Button minusMinutesButton;
+
+    @FXML
+    private Button minusSecondsButton;
+
+    @FXML
+    private Button plusHoursButton;
+
+    @FXML
+    private Button plusMinutesButton;
+
+    @FXML
+    private Button plusSecondsButton;
+
+    @FXML
+    private Label errorMessageLabel;
+
+
     private TimerModel timer;
     private Timeline timeline;
 
@@ -19,7 +48,6 @@ public class TimerController {
     public void initialize() {
         //create new timer object with default values of 0
         timer = new TimerModel(0, 0, 0);
-
 
         timerText.setText(timer.getCurrentTime());
 
@@ -36,18 +64,9 @@ public class TimerController {
     @FXML
     void plusSeconds(ActionEvent event) {
 
-        int totalSeconds = timer.getHours() * 3600
-                + timer.getMinutes() * 60
-                + timer.getSeconds()
-                + 5;
-
-        int hours = totalSeconds / 3600;
-        int minutes = (totalSeconds % 3600) / 60;
-        int seconds = totalSeconds % 60;
-
-        timer.setHours(hours);
-        timer.setMinutes(minutes);
-        timer.setSeconds(seconds);
+        timer.setHours((timer.getTotalSeconds() + 5) / 3600);
+        timer.setMinutes(((timer.getTotalSeconds() + 5) % 3600) / 60);
+        timer.setSeconds((timer.getTotalSeconds() + 5) % 60);
 
         timerText.setText(timer.getCurrentTime());
 
@@ -55,17 +74,14 @@ public class TimerController {
 
     @FXML
     void minusHours(ActionEvent event) {
-        int totalSeconds = timer.getHours() * 3600
-                + timer.getMinutes() * 60
-                + timer.getSeconds();
 
-        if(totalSeconds - 3600 >= 0){
-            totalSeconds -= 3600;
-            timer.setHours(totalSeconds / 3600);
-            timer.setMinutes((totalSeconds % 3600) / 60);
-            timer.setSeconds(totalSeconds % 60);
+        if(timer.getTotalSeconds() - 3600 >= 0){
+            timer.setHours((timer.getTotalSeconds() - 3600) / 3600);
+            timer.setMinutes(((timer.getTotalSeconds() - 3600) % 3600) / 60);
+            timer.setSeconds((timer.getTotalSeconds() - 3600) % 60);
         } else{
-
+            errorMessageLabel.setText("Cannot Set Time Below Zero");
+            clearTimer();
         }
 
         timerText.setText(timer.getCurrentTime());
@@ -73,17 +89,13 @@ public class TimerController {
 
     @FXML
     void minusMinutes(ActionEvent event) {
-        int totalSeconds = timer.getHours() * 3600
-                + timer.getMinutes() * 60
-                + timer.getSeconds();
-
-        if(totalSeconds - 300 >= 0){
-            totalSeconds -= 300;
-            timer.setHours(totalSeconds / 3600);
-            timer.setMinutes((totalSeconds % 3600) / 60);
-            timer.setSeconds(totalSeconds % 60);
+        if(timer.getTotalSeconds() - 300 >= 0){
+            timer.setHours((timer.getTotalSeconds() - 300) / 3600);
+            timer.setMinutes(((timer.getTotalSeconds() - 300) % 3600) / 60);
+            timer.setSeconds((timer.getTotalSeconds() - 300) % 60);
         } else{
-
+            errorMessageLabel.setText("Cannot Set Time Below Zero");
+            clearTimer();
         }
 
         timerText.setText(timer.getCurrentTime());
@@ -92,17 +104,13 @@ public class TimerController {
     @FXML
     void minusSeconds(ActionEvent event) {
 
-        int totalSeconds = timer.getHours() * 3600
-                + timer.getMinutes() * 60
-                + timer.getSeconds();
-
-        if(totalSeconds - 5 >= 0){
-            totalSeconds -= 5;
-            timer.setHours(totalSeconds / 3600);
-            timer.setMinutes((totalSeconds % 3600) / 60);
-            timer.setSeconds(totalSeconds % 60);
+        if(timer.getTotalSeconds() - 5 >= 0){
+            timer.setHours((timer.getTotalSeconds() - 5) / 3600);
+            timer.setMinutes(((timer.getTotalSeconds() - 5) % 3600) / 60);
+            timer.setSeconds((timer.getTotalSeconds() - 5) % 60);
         } else{
-
+            errorMessageLabel.setText("Cannot Set Time Below Zero");
+            clearTimer();
         }
 
         timerText.setText(timer.getCurrentTime());
@@ -110,36 +118,20 @@ public class TimerController {
 
     @FXML
     void plusHours(ActionEvent event) {
-        int totalSeconds = timer.getHours() * 3600
-                + timer.getMinutes() * 60
-                + timer.getSeconds()
-                + 3600;
 
-        int hours = totalSeconds / 3600;
-        int minutes = (totalSeconds % 3600) / 60;
-        int seconds = totalSeconds % 60;
-
-        timer.setHours(hours);
-        timer.setMinutes(minutes);
-        timer.setSeconds(seconds);
+        timer.setHours((timer.getTotalSeconds() + 3600) / 3600);
+        timer.setMinutes(((timer.getTotalSeconds() + 3600) % 3600) / 60);
+        timer.setSeconds((timer.getTotalSeconds() + 3600) % 60);
 
         timerText.setText(timer.getCurrentTime());
     }
 
     @FXML
     void plusMinutes(ActionEvent event) {
-        int totalSeconds = timer.getHours() * 3600
-                + timer.getMinutes() * 60
-                + timer.getSeconds()
-                + 300;
 
-        int hours = totalSeconds / 3600;
-        int minutes = (totalSeconds % 3600) / 60;
-        int seconds = totalSeconds % 60;
-
-        timer.setHours(hours);
-        timer.setMinutes(minutes);
-        timer.setSeconds(seconds);
+        timer.setHours((timer.getTotalSeconds() + 300) / 3600);
+        timer.setMinutes(((timer.getTotalSeconds() + 300) % 3600) / 60);
+        timer.setSeconds((timer.getTotalSeconds() + 300) % 60);
 
         timerText.setText(timer.getCurrentTime());
     }
@@ -150,22 +142,39 @@ public class TimerController {
         timerText.setText(timer.getCurrentTime());
 
         //stops timer when seconds, minutes and hours are 0
-        if (timer.getHours() == 0 && timer.getMinutes() == 0 && timer.getSeconds() == 0) {
+        if (timer.getTotalSeconds() == 0) {
             pauseTimer();
-            return;
         }
     }
 
     @FXML
     void startTimer(ActionEvent event) {
-        //idk why this works but it does, makes no sense to me but i dont wanna mess with it
-        timeline.stop();
-        timeline.playFromStart();
+
+        if(timer.getTotalSeconds() == 0){
+            errorMessageLabel.setText("Please enter an amount of time");
+        }else{
+            //idk why this works but it does, makes no sense to me but i dont wanna mess with it
+            errorMessageLabel.setText("");
+            timeline.stop();
+            timeline.playFromStart();
+            plusSecondsButton.setDisable(true);
+            plusMinutesButton.setDisable(true);
+            plusHoursButton.setDisable(true);
+            minusSecondsButton.setDisable(true);
+            minusMinutesButton.setDisable(true);
+            minusHoursButton.setDisable(true);
+        }
     }
 
     @FXML
     void pauseTimer(){
         timeline.stop();
+        plusSecondsButton.setDisable(false);
+        plusMinutesButton.setDisable(false);
+        plusHoursButton.setDisable(false);
+        minusSecondsButton.setDisable(false);
+        minusMinutesButton.setDisable(false);
+        minusHoursButton.setDisable(false);
     }
 
     @FXML
@@ -175,6 +184,12 @@ public class TimerController {
         timer.setMinutes(0);
         timer.setHours(0);
         timerText.setText(timer.getCurrentTime());
+        plusSecondsButton.setDisable(false);
+        plusMinutesButton.setDisable(false);
+        plusHoursButton.setDisable(false);
+        minusSecondsButton.setDisable(false);
+        minusMinutesButton.setDisable(false);
+        minusHoursButton.setDisable(false);
     }
 }
 

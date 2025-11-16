@@ -78,5 +78,9 @@ public class TimerModel {
         this.hours = hours;
     }
 
+    public int getTotalSeconds(){
+        return (hours * 3600) + (minutes * 60) + seconds;
+    }
+
 
 }
