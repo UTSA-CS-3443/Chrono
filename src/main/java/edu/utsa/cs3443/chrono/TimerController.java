@@ -87,6 +87,7 @@ public class TimerController {
         timerText.setText(timer.getCurrentTime());
     }
 
+    //TODO fix bug where timer reduces to negatives when subtracting minutes from 1hr exactly
     @FXML
     void minusMinutes(ActionEvent event) {
         if(timer.getTotalSeconds() - 300 >= 0){
@@ -94,8 +95,9 @@ public class TimerController {
             timer.setMinutes(((timer.getTotalSeconds() - 300) % 3600) / 60);
             timer.setSeconds((timer.getTotalSeconds() - 300) % 60);
         } else{
-            errorMessageLabel.setText("Cannot Set Time Below Zero");
             clearTimer();
+            errorMessageLabel.setText("Cannot Set Time Below Zero");
+
         }
 
         timerText.setText(timer.getCurrentTime());
