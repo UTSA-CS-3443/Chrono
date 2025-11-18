@@ -8,13 +8,21 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ChronoApplication extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ChronoApplication.class.getResource("screen1_checklist.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
 
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(
+                ChronoApplication.class.getResource("/edu/utsa/cs3443/chrono/layouts/main_ui.fxml")  // Make sure this filename is EXACT
+        );
+
+        Scene scene = new Scene(loader.load(), 600, 400);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Chrono");
+        primaryStage.setResizable(true);  // optional
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
     }
 }

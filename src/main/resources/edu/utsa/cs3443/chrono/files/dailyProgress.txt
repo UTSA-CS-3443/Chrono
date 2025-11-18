@@ -1,0 +1,2 @@
+# Last reset: never
+# Format: YYYY-MM-DD=true/false
