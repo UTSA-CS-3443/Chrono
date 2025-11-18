@@ -101,7 +101,17 @@ public class TimerController {
 
     }
 
-
+    /**
+     * takes a total number of seconds as a parameter and update the timers hours, minutes and seconds accordingly
+     *
+     * @param totalSeconds total seconds of new timer
+     */
+    private void updateTimerFromTotal(int totalSeconds) {
+        timer.setHours(totalSeconds / 3600);
+        timer.setMinutes((totalSeconds % 3600) / 60);
+        timer.setSeconds(totalSeconds % 60);
+        timerText.setText(timer.getCurrentTime());
+    }
 
     /**
      * utilized to add time to the timer, will be updated to add values greater than 5 seconds as well as remove time
@@ -110,79 +120,47 @@ public class TimerController {
      */
     @FXML
     void plusSeconds(ActionEvent event) {
-
-        timer.setHours((timer.getTotalSeconds() + 5) / 3600);
-        timer.setMinutes(((timer.getTotalSeconds() + 5) % 3600) / 60);
-        timer.setSeconds((timer.getTotalSeconds() + 5) % 60);
-
-        timerText.setText(timer.getCurrentTime());
-
+        updateTimerFromTotal(timer.getTotalSeconds() + 5);
     }
 
     @FXML
     void minusHours(ActionEvent event) {
-
-        if(timer.getTotalSeconds() - 3600 >= 0){
-            timer.setHours((timer.getTotalSeconds() - 3600) / 3600);
-            timer.setMinutes(((timer.getTotalSeconds() - 3600) % 3600) / 60);
-            timer.setSeconds((timer.getTotalSeconds() - 3600) % 60);
-        } else{
+        if (timer.getTotalSeconds() - 3600 < 0) {
             errorMessageLabel.setText("Cannot Set Time Below Zero");
             clearTimer();
+            return;
         }
-
-        timerText.setText(timer.getCurrentTime());
+        updateTimerFromTotal(timer.getTotalSeconds() - 3600);
     }
 
-    //TODO fix bug where timer reduces to negatives when subtracting minutes from 1hr exactly
     @FXML
     void minusMinutes(ActionEvent event) {
-        if(timer.getTotalSeconds() - 300 >= 0){
-            timer.setHours((timer.getTotalSeconds() - 300) / 3600);
-            timer.setMinutes(((timer.getTotalSeconds() - 300) % 3600) / 60);
-            timer.setSeconds((timer.getTotalSeconds() - 300) % 60);
-        } else{
-            clearTimer();
+        if (timer.getTotalSeconds() - 300 < 0) {
             errorMessageLabel.setText("Cannot Set Time Below Zero");
-
+            clearTimer();
+            return;
         }
-
-        timerText.setText(timer.getCurrentTime());
+        updateTimerFromTotal(timer.getTotalSeconds() - 300);
     }
 
     @FXML
     void minusSeconds(ActionEvent event) {
-
-        if(timer.getTotalSeconds() - 5 >= 0){
-            timer.setHours((timer.getTotalSeconds() - 5) / 3600);
-            timer.setMinutes(((timer.getTotalSeconds() - 5) % 3600) / 60);
-            timer.setSeconds((timer.getTotalSeconds() - 5) % 60);
-        } else{
+        if (timer.getTotalSeconds() - 5 < 0) {
             errorMessageLabel.setText("Cannot Set Time Below Zero");
             clearTimer();
+            return;
         }
-
-        timerText.setText(timer.getCurrentTime());
+        updateTimerFromTotal(timer.getTotalSeconds() - 5);
     }
 
     @FXML
     void plusHours(ActionEvent event) {
-
-        timer.setHours((timer.getTotalSeconds() + 3600) / 3600);
-        timer.setMinutes(((timer.getTotalSeconds() + 3600) % 3600) / 60);
-        timer.setSeconds((timer.getTotalSeconds() + 3600) % 60);
-
-        timerText.setText(timer.getCurrentTime());
+        updateTimerFromTotal(timer.getTotalSeconds() + 3600);
     }
 
     @FXML
     void plusMinutes(ActionEvent event) {
-
-        timer.setHours((timer.getTotalSeconds() + 300) / 3600);
-        timer.setMinutes(((timer.getTotalSeconds() + 300) % 3600) / 60);
-        timer.setSeconds((timer.getTotalSeconds() + 300) % 60);
-
-        timerText.setText(timer.getCurrentTime());
+        updateTimerFromTotal(timer.getTotalSeconds() + 300);
     }
 
     private void tick() {
