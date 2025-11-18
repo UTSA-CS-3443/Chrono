@@ -76,4 +76,13 @@ public class Task {
     public void setPointValue(int pointValue) {
         this.pointValue.set(pointValue);
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "description=" + description +
+                ", isComplete=" + isComplete +
+                ", pointValue=" + pointValue +
+                '}';
+    }
 }

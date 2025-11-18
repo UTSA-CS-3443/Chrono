@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="added more button to timer screen">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/defaultController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/default-view.fxml" afterDir="false" />
+    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/store-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/store-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/timer-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/timer-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

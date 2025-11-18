@@ -1,13 +1,29 @@
 package edu.utsa.cs3443.chrono;
 
+import edu.utsa.cs3443.chrono.models.Task;
+import edu.utsa.cs3443.chrono.models.TaskManager;
 import edu.utsa.cs3443.chrono.models.TimerModel;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.util.Duration;
+
+/*
+TODO add button to confirm confirmation of selected task
+TODO when timer runs out, auto complete task, or ask user if task is completed
+TODO add due date, total time, other things to task objects
+TODO grey out assign and list when start button is pressed to prevent changing while timer runs
+TODO reset timer if new task is selected after time start,
+TODO warn user this will reset timer when they go to assign it, ask for confirmation
+ */
 
 /**
  * controller class for operations on timer screen
@@ -18,6 +34,9 @@ public class TimerController {
 
     @FXML
     private Label timerText;
+
+    @FXML
+    private Label currentTaskLabel;
 
     @FXML
     private Button minusHoursButton;
@@ -40,9 +59,15 @@ public class TimerController {
     @FXML
     private Label errorMessageLabel;
 
+    @FXML
+    private ListView<Task> taskList;
+
+    private TaskManager tm;
 
     private TimerModel timer;
     private Timeline timeline;
+    private ObservableList<Task> tasks;
+    private Task selectedTask;
 
     @FXML
     public void initialize() {
@@ -54,7 +79,29 @@ public class TimerController {
         //new timeline and keyframe which calls every second until stopped
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> tick()));
         timeline.setCycleCount(Timeline.INDEFINITE);
+
+        tm = new TaskManager();
+        tm.addTask("test 1", 10);
+        tm.addTask("test 2", 20);
+        tasks = FXCollections.observableArrayList();
+        tasks.addAll(tm.getTasks());
+        taskList.setItems(tasks);
+
+        //every time a task is selected on the list, changed method is called and reassigns the selected task with the chosen one
+        taskList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Task>() {
+            @Override
+            public void changed(ObservableValue<? extends Task> observableValue, Task task, Task t1) {
+
+                selectedTask = taskList.getSelectionModel().getSelectedItem();
+
+                currentTaskLabel.setText("Current Task: " + selectedTask.getDescription());
+
+            }
+        });
+
     }
+
+
 
     /**
      * utilized to add time to the timer, will be updated to add values greater than 5 seconds as well as remove time
@@ -193,5 +240,9 @@ public class TimerController {
         minusMinutesButton.setDisable(false);
         minusHoursButton.setDisable(false);
     }
+
+
+
+
 }
 
