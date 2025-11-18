@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="added more button to timer screen">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/defaultController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/default-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/TimerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/TimerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/timer-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/timer-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/store-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/store-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +38,12 @@
     &quot;assignee&quot;: &quot;Matt-Egg&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/UTSA-CS-3443/Chrono.git",
-    "accountId": "0c10f2ab-3bce-413f-a195-208ab3e8b84f"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/UTSA-CS-3443/Chrono&quot;,
+    &quot;accountId&quot;: &quot;045f964a-b7fa-4b14-a31f-04a5ef1fd3e1&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -51,7 +52,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Security Analysis" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -61,21 +62,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ChronoApplication.executor": "Run",
-    "Application.Launcher.executor": "Run",
-    "Application.Unnamed.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Matthew/IdeaProjects/Chrono"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ChronoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Launcher.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Matthew/IdeaProjects/Chrono&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Matthew\IdeaProjects\Chrono\src\main\resources\edu\utsa\cs3443\chrono\layouts" />
@@ -94,6 +105,14 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="" />
@@ -101,6 +120,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762966825122</updated>
+      <workItem from="1763424249457" duration="2626000" />
     </task>
     <task id="LOCAL-00001" summary="Created most basic files">
       <option name="closed" value="true" />
@@ -137,10 +157,17 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created most basic files" />
     <MESSAGE value="added timer model, timer controller and bare-bones timer screen, will continue to update" />
     <MESSAGE value="added more button to timer screen" />
     <option name="LAST_COMMIT_MESSAGE" value="added more button to timer screen" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
