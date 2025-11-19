@@ -47,35 +47,35 @@ public class mainUI_Controller {
 
     public void goChecklist(ActionEvent actionEvent) {
         loadCenter("checklist_view.fxml");
-        ChronoApplication.primaryStageReference.setTitle("Checklist");
+        ChronoApplication.primaryStageReference.setTitle("Chrono - Checklist");
         headerLabel.setText("Checklist");
 
     }
 
     public void goTimer(ActionEvent actionEvent) {
         loadCenter("timer_view.fxml");
-        ChronoApplication.primaryStageReference.setTitle("Task Timer");
+        ChronoApplication.primaryStageReference.setTitle("Chrono - Task Timer");
         headerLabel.setText("Task Timer");
 
     }
 
     public void goCreature(ActionEvent actionEvent) {
         loadCenter("creature_view.fxml");
-        ChronoApplication.primaryStageReference.setTitle("Creature");
+        ChronoApplication.primaryStageReference.setTitle("Chrono - Creature");
         headerLabel.setText("Creature");
 
     }
 
     public void goThemes(ActionEvent actionEvent) {
         loadCenter("themes_view.fxml");
-        ChronoApplication.primaryStageReference.setTitle("Themes");
+        ChronoApplication.primaryStageReference.setTitle("Chrono - Themes");
         headerLabel.setText("Themes");
 
     }
 
     public void goStore(ActionEvent actionEvent) throws IOException {
         loadCenter("store_view.fxml");
-        ChronoApplication.primaryStageReference.setTitle("Store");
+        ChronoApplication.primaryStageReference.setTitle("Chrono - Store");
         headerLabel.setText("Store");
 
     }

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="updated timer screen and reduced redundant code" />
+    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="header changes on scene change, welcome screen added on startup">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/mainUI_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/mainUI_Controller.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,12 +37,12 @@
     &quot;assignee&quot;: &quot;Matt-Egg&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/UTSA-CS-3443/Chrono&quot;,
-    &quot;accountId&quot;: &quot;045f964a-b7fa-4b14-a31f-04a5ef1fd3e1&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/UTSA-CS-3443/Chrono.git",
+    "accountId": "0c10f2ab-3bce-413f-a195-208ab3e8b84f"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -102,14 +107,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -176,11 +173,46 @@
       <option name="project" value="LOCAL" />
       <updated>1763521728448</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="most updated version of timer, added css files for buttons and list view">
+      <option name="closed" value="true" />
+      <created>1763572220046</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763572220046</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed css file issues, stage header now changes on scene change">
+      <option name="closed" value="true" />
+      <created>1763581466704</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1763581466704</updated>
+    </task>
+    <task id="LOCAL-00010" summary="header changes on scene change, welcome screen added on startup">
+      <option name="closed" value="true" />
+      <created>1763585942184</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1763585942184</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created most basic files" />
@@ -189,7 +221,10 @@
     <MESSAGE value="added listview of tasks to timer screen and made tasks selectable" />
     <MESSAGE value="fixed timer bugs and updated timer screen" />
     <MESSAGE value="updated timer screen and reduced redundant code" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated timer screen and reduced redundant code" />
+    <MESSAGE value="most updated version of timer, added css files for buttons and list view" />
+    <MESSAGE value="fixed css file issues, stage header now changes on scene change" />
+    <MESSAGE value="header changes on scene change, welcome screen added on startup" />
+    <option name="LAST_COMMIT_MESSAGE" value="header changes on scene change, welcome screen added on startup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -21,5 +21,4 @@ public class WelcomeController {
             System.err.println("mainController is null!");
         }
     }
-
 }

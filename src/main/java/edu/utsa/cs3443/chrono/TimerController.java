@@ -17,7 +17,6 @@ import javafx.scene.control.ListView;
 import javafx.util.Duration;
 
 
-
 /**
  * controller class for operations on timer screen
  *
