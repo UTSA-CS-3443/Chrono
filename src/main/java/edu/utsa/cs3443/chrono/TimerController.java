@@ -16,12 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.util.Duration;
 
-/*
-TODO when timer runs out, auto complete task, or ask user if task is completed
-TODO add due date, total time, other things to task objects
-TODO reset timer if new task is selected after time start,
-TODO warn user this will reset timer when they go to assign it, ask for confirmation
- */
+
 
 /**
  * controller class for operations on timer screen
