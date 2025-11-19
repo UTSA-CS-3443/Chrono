@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 import java.io.IOException;
+import javafx.scene.control.Label;
 
 
 public class mainUI_Controller {
@@ -13,9 +14,12 @@ public class mainUI_Controller {
     private BorderPane layoutPane;
 
     @FXML
+    private Label headerLabel;
+
+    @FXML
     private void initialize(){
-        // set the creature view to load on startup
-        loadCenter("store_view.fxml");
+        // set the welcome view to load on startup
+        loadCenter("welcome_view.fxml");
     }
 
     private void loadCenter(String fxmlFileName) {
@@ -30,6 +34,12 @@ public class mainUI_Controller {
             }
 
             layoutPane.setCenter(loader.load());
+
+            Object controller = loader.getController();
+            if (controller instanceof WelcomeController wc) {
+                wc.setMainController(this);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -38,30 +48,35 @@ public class mainUI_Controller {
     public void goChecklist(ActionEvent actionEvent) {
         loadCenter("checklist_view.fxml");
         ChronoApplication.primaryStageReference.setTitle("Checklist");
-        
+        headerLabel.setText("Checklist");
+
     }
 
     public void goTimer(ActionEvent actionEvent) {
         loadCenter("timer_view.fxml");
         ChronoApplication.primaryStageReference.setTitle("Task Timer");
+        headerLabel.setText("Task Timer");
 
     }
 
     public void goCreature(ActionEvent actionEvent) {
         loadCenter("creature_view.fxml");
         ChronoApplication.primaryStageReference.setTitle("Creature");
+        headerLabel.setText("Creature");
 
     }
 
     public void goThemes(ActionEvent actionEvent) {
         loadCenter("themes_view.fxml");
         ChronoApplication.primaryStageReference.setTitle("Themes");
+        headerLabel.setText("Themes");
 
     }
 
     public void goStore(ActionEvent actionEvent) throws IOException {
         loadCenter("store_view.fxml");
         ChronoApplication.primaryStageReference.setTitle("Store");
+        headerLabel.setText("Store");
 
     }
 }

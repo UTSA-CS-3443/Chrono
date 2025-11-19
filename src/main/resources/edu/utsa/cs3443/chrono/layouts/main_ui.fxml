@@ -32,7 +32,7 @@
                 <Insets left="20" />
             </padding>
             <children>
-                <Label id="screenLabel" style="-fx-text-fill: white; -fx-font-size: 20;" text="Store" />
+                <Label id="screenLabel" fx:id="headerLabel" style="-fx-text-fill: white; -fx-font-size: 20;" text="Welcome To Chrono" />
             </children>
         </HBox>
     </top>

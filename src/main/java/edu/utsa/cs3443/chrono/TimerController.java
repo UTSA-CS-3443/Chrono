@@ -58,11 +58,8 @@ public class TimerController {
     @FXML
     private ListView<Task> taskList;
 
-    private TaskManager tm;
-
     private TimerModel timer;
     private Timeline timeline;
-    private ObservableList<Task> tasks;
     private Task selectedTask;
 
     @FXML
@@ -76,10 +73,10 @@ public class TimerController {
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> tick()));
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-        tm = new TaskManager();
+        TaskManager tm = new TaskManager();
         tm.addTask("test 1", 10);
         tm.addTask("test 2", 20);
-        tasks = FXCollections.observableArrayList();
+        ObservableList<Task> tasks = FXCollections.observableArrayList();
         tasks.addAll(tm.getTasks());
         taskList.setItems(tasks);
 
