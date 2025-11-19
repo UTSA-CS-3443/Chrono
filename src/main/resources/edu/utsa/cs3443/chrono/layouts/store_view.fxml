@@ -20,21 +20,25 @@
                   <StackPane fx:id="redTheme" prefHeight="70.0" style="-fx-background-color: #4A1C1C; -fx-background-radius: 10;">
                      <children>
                         <Label style="-fx-text-fill: white;" text="Red - 200 Coins" />
+                        <Button fx:id="redThemeButton" mnemonicParsing="false" onAction="#buyRed" opacity="0.0" prefHeight="57.0" prefWidth="401.0" />
                      </children>
                   </StackPane>
                   <StackPane fx:id="greenTheme" prefHeight="70.0" style="-fx-background-color: #22332D; -fx-background-radius: 10;">
                      <children>
                         <Label style="-fx-text-fill: white;" text="Green - 200 Coins" />
+                        <Button fx:id="greenThemeButton" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="401.0" />
                      </children>
                   </StackPane>
                   <StackPane fx:id="purpleTheme" prefHeight="70.0" style="-fx-background-color: #342544; -fx-background-radius: 10;">
                      <children>
                         <Label style="-fx-text-fill: white;" text="Purple - 200 Coins" />
+                        <Button fx:id="purpleThemeButton" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="401.0" />
                      </children>
                   </StackPane>
                   <StackPane fx:id="orangeTheme" prefHeight="70.0" style="-fx-background-color: #5A3B10; -fx-background-radius: 10;">
                      <children>
                         <Label style="-fx-text-fill: white;" text="Orange - 200 Coins" />
+                        <Button fx:id="orangeThemeButton" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="401.0" />
                      </children>
                   </StackPane>
                </children>
@@ -45,16 +49,19 @@
                   <StackPane fx:id="cosmetic1" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
                      <children>
                         <Label style="-fx-text-fill: white;" text="100 Coins" />
+                        <Button fx:id="cosmetic1Button" mnemonicParsing="false" opacity="0.0" prefHeight="98.0" prefWidth="117.0" />
                      </children>
                   </StackPane>
                   <StackPane fx:id="cosmetic2" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
                      <children>
                         <Label style="-fx-text-fill: white;" text="100 Coins" />
+                        <Button fx:id="cosmetic2Button" mnemonicParsing="false" opacity="0.0" prefHeight="98.0" prefWidth="117.0" />
                      </children>
                   </StackPane>
                   <StackPane fx:id="cosmetic3" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
                      <children>
                         <Label style="-fx-text-fill: white;" text="100 Coins" />
+                        <Button fx:id="cosmetic3Button" mnemonicParsing="false" opacity="0.0" prefHeight="98.0" prefWidth="117.0" />
                      </children>
                   </StackPane>
                </children>
@@ -69,7 +76,7 @@
             <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
                   <Circle fill="#F1DF4C" radius="20" />
-                  <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="x 280" />
+                  <Label fx:id="coinCounter" style="-fx-font-size: 18; -fx-font-weight: bold;" text="x 0" />
                </children>
             </HBox>
             <VBox spacing="18.0" style="-fx-background-color: #8DA0B3; -fx-background-radius: 20;">

@@ -1,21 +1,39 @@
 package edu.utsa.cs3443.chrono;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.*;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 import java.io.*;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.*;
-import javafx.scene.control.Label;
 
 public class store_viewController{
     public ProgressBar midnightProgress;
+    @FXML
+    public Button cosmetic3Button;
+    @FXML
+    public Button cosmetic2Button;
+    @FXML
+    public Button cosmetic1Button;
+    @FXML
+    public Button orangeThemeButton;
+    @FXML
+    public Button purpleThemeButton;
+    @FXML
+    public Button greenThemeButton;
+    @FXML
+    public Button redThemeButton;
+    @FXML
+    public Label coinCounter;
     @FXML
     private VBox dailyBackground;
     @FXML
@@ -43,6 +61,8 @@ public class store_viewController{
     @FXML
     private Button task3;
 
+    public int coins = 0;
+
     private final ArrayList<String> dailyTasks = new ArrayList<String>();
 
     @FXML
@@ -51,8 +71,41 @@ public class store_viewController{
         loadOrResetDailyProgress();
         MidnightCountdown countdown = new MidnightCountdown(timeLabel, midnightProgress);
         countdown.start();
+        loadUnlocks();
     }
 
+
+    private void loadUnlocks(){
+        Path path = Paths.get(unlockFilePath);
+
+        //if file does not exist or is empty, start with 0 coins
+        if(!Files.exists(path)){
+            System.out.println("No save file found, starting with 0 coins.");
+
+        }
+
+        try{
+            String content = Files.readString(path).trim();
+
+            // if file is empty
+            if(content.isEmpty()){
+                System.out.println("File is empty. defaulting to 0 coins");
+
+            }
+
+            int savedCoins = Integer.parseInt(content);
+            System.out.println("Successfully loaded " + savedCoins + " coins.");
+            coins = savedCoins;
+        }catch(IOException e){
+            showErrorAlert("Could not read the save file");
+            e.printStackTrace();
+        }catch(NumberFormatException e){
+            showErrorAlert("Corrupted save data");
+            e.printStackTrace();
+        }
+
+        updateCoinCounter();
+    }
 
 
     // Reads through dailyTasks.csv and stores the tasks in an arraylist
@@ -235,5 +288,58 @@ public class store_viewController{
         }else{
             btn.setStyle("-fx-background-color: #444444; -fx-text-fill: white;");
         }
+    }
+
+    private void updateCoinCounter(){
+        coinCounter.setText("x " + coins);
+        saveUnlocks();
+    }
+
+
+    private String unlockFilePath = "/edu/utsa/cs3443/chrono/files/unlocks.txt";
+    private void saveUnlocks(){
+        Path path = Paths.get(unlockFilePath);
+
+        try{
+            // convert coins to string and write to file
+            String coinsData = String.valueOf(coins);
+
+            // create file directories if it cannot find it
+            if(path.getParent() != null){
+                Files.createDirectories(path.getParent());
+            }
+
+            // write coins value and overwrite file
+            Files.writeString(path, coinsData,
+                    StandardOpenOption.CREATE,
+                    StandardOpenOption.WRITE,
+                    StandardOpenOption.TRUNCATE_EXISTING);
+
+            System.out.println("Coins saved successfully: " + coins);
+        }catch(IOException e){
+            showErrorAlert("Failed to save unlocks and coins: could not save to file");
+            e.printStackTrace();
+        }
+    }
+
+    private static void showErrorAlert(String content){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Save Error");
+        alert.setHeaderText("Could not save");
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
+    public void buyRed(ActionEvent actionEvent) {
+        if(coins >= 200){
+            redThemeUnlock();
+            coins -= 200;
+            updateCoinCounter();
+        }
+    }
+
+    private void redThemeUnlock(){
+        redTheme.setStyle("-fx-background-color: #9E1C1C");
+        // redTheme.setStyle("-fx-background-radius: 10"); changing the radius to not make it square makes it transparent for some reason
     }
 }
