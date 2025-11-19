@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="updated timer screen and reduced redundant code">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" afterDir="false" />
+    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="most updated version of timer, added css files for buttons and list view">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ChronoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ChronoApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763521728448</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="most updated version of timer, added css files for buttons and list view">
+      <option name="closed" value="true" />
+      <created>1763523595640</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763523595640</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +196,8 @@
     <MESSAGE value="added listview of tasks to timer screen and made tasks selectable" />
     <MESSAGE value="fixed timer bugs and updated timer screen" />
     <MESSAGE value="updated timer screen and reduced redundant code" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated timer screen and reduced redundant code" />
+    <MESSAGE value="most updated version of timer, added css files for buttons and list view" />
+    <option name="LAST_COMMIT_MESSAGE" value="most updated version of timer, added css files for buttons and list view" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
