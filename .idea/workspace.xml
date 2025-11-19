@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="added listview of tasks to timer screen and made tasks selectable">
+    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="fixed timer bugs and updated timer screen">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/blue-buttons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/ghost-buttons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/timerList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ChronoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ChronoApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/timer-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/timer-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763442114148</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed timer bugs and updated timer screen">
+      <option name="closed" value="true" />
+      <created>1763482423242</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763482423242</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +185,8 @@
     <MESSAGE value="added timer model, timer controller and bare-bones timer screen, will continue to update" />
     <MESSAGE value="added more button to timer screen" />
     <MESSAGE value="added listview of tasks to timer screen and made tasks selectable" />
-    <option name="LAST_COMMIT_MESSAGE" value="added listview of tasks to timer screen and made tasks selectable" />
+    <MESSAGE value="fixed timer bugs and updated timer screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed timer bugs and updated timer screen" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

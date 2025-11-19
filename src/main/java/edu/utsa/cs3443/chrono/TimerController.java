@@ -17,10 +17,8 @@ import javafx.scene.control.ListView;
 import javafx.util.Duration;
 
 /*
-TODO add button to confirm confirmation of selected task
 TODO when timer runs out, auto complete task, or ask user if task is completed
 TODO add due date, total time, other things to task objects
-TODO grey out assign and list when start button is pressed to prevent changing while timer runs
 TODO reset timer if new task is selected after time start,
 TODO warn user this will reset timer when they go to assign it, ask for confirmation
  */
@@ -31,6 +29,9 @@ TODO warn user this will reset timer when they go to assign it, ask for confirma
  * @author Davis Howe
  */
 public class TimerController {
+
+    @FXML
+    private Button assignTaskButton;
 
     @FXML
     private Label timerText;
@@ -91,14 +92,20 @@ public class TimerController {
         taskList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Task>() {
             @Override
             public void changed(ObservableValue<? extends Task> observableValue, Task task, Task t1) {
-
-                selectedTask = taskList.getSelectionModel().getSelectedItem();
-
-                currentTaskLabel.setText("Current Task: " + selectedTask.getDescription());
-
             }
         });
 
+    }
+
+    @FXML
+    void assignTaskButtonPressed(ActionEvent event) {
+        selectedTask = taskList.getSelectionModel().getSelectedItem();
+        if(selectedTask == null){
+            errorMessageLabel.setText("Please Select a Task");
+        }else {
+            currentTaskLabel.setText("Current Task: " + selectedTask.getDescription());
+            errorMessageLabel.setText("");
+        }
     }
 
     /**
@@ -114,8 +121,7 @@ public class TimerController {
     }
 
     /**
-     * utilized to add time to the timer, will be updated to add values greater than 5 seconds as well as remove time
-     * calculates total seconds and assigns proper values to each respective variable
+     *
      * @param event add time button click
      */
     @FXML
@@ -124,23 +130,13 @@ public class TimerController {
     }
 
     @FXML
-    void minusHours(ActionEvent event) {
-        if (timer.getTotalSeconds() - 3600 < 0) {
-            errorMessageLabel.setText("Cannot Set Time Below Zero");
-            clearTimer();
-            return;
-        }
-        updateTimerFromTotal(timer.getTotalSeconds() - 3600);
+    void plusMinutes(ActionEvent event) {
+        updateTimerFromTotal(timer.getTotalSeconds() + 300);
     }
 
     @FXML
-    void minusMinutes(ActionEvent event) {
-        if (timer.getTotalSeconds() - 300 < 0) {
-            errorMessageLabel.setText("Cannot Set Time Below Zero");
-            clearTimer();
-            return;
-        }
-        updateTimerFromTotal(timer.getTotalSeconds() - 300);
+    void plusHours(ActionEvent event) {
+        updateTimerFromTotal(timer.getTotalSeconds() + 3600);
     }
 
     @FXML
@@ -154,13 +150,23 @@ public class TimerController {
     }
 
     @FXML
-    void plusHours(ActionEvent event) {
-        updateTimerFromTotal(timer.getTotalSeconds() + 3600);
+    void minusMinutes(ActionEvent event) {
+        if (timer.getTotalSeconds() - 300 < 0) {
+            errorMessageLabel.setText("Cannot Set Time Below Zero");
+            clearTimer();
+            return;
+        }
+        updateTimerFromTotal(timer.getTotalSeconds() - 300);
     }
 
     @FXML
-    void plusMinutes(ActionEvent event) {
-        updateTimerFromTotal(timer.getTotalSeconds() + 300);
+    void minusHours(ActionEvent event) {
+        if (timer.getTotalSeconds() - 3600 < 0) {
+            errorMessageLabel.setText("Cannot Set Time Below Zero");
+            clearTimer();
+            return;
+        }
+        updateTimerFromTotal(timer.getTotalSeconds() - 3600);
     }
 
     private void tick() {
@@ -177,31 +183,23 @@ public class TimerController {
     @FXML
     void startTimer(ActionEvent event) {
 
-        if(timer.getTotalSeconds() == 0){
+        if(selectedTask == null){
+            errorMessageLabel.setText("Please assign a Task To Complete");
+        }else if(timer.getTotalSeconds() == 0){
             errorMessageLabel.setText("Please enter an amount of time");
         }else{
             //idk why this works but it does, makes no sense to me but i dont wanna mess with it
             errorMessageLabel.setText("");
             timeline.stop();
             timeline.playFromStart();
-            plusSecondsButton.setDisable(true);
-            plusMinutesButton.setDisable(true);
-            plusHoursButton.setDisable(true);
-            minusSecondsButton.setDisable(true);
-            minusMinutesButton.setDisable(true);
-            minusHoursButton.setDisable(true);
+            disableButtons(true);
         }
     }
 
     @FXML
     void pauseTimer(){
         timeline.stop();
-        plusSecondsButton.setDisable(false);
-        plusMinutesButton.setDisable(false);
-        plusHoursButton.setDisable(false);
-        minusSecondsButton.setDisable(false);
-        minusMinutesButton.setDisable(false);
-        minusHoursButton.setDisable(false);
+        disableButtons(false);
     }
 
     @FXML
@@ -211,14 +209,19 @@ public class TimerController {
         timer.setMinutes(0);
         timer.setHours(0);
         timerText.setText(timer.getCurrentTime());
-        plusSecondsButton.setDisable(false);
-        plusMinutesButton.setDisable(false);
-        plusHoursButton.setDisable(false);
-        minusSecondsButton.setDisable(false);
-        minusMinutesButton.setDisable(false);
-        minusHoursButton.setDisable(false);
+        disableButtons(false);
     }
 
+    public void disableButtons(boolean enabled){
+        plusSecondsButton.setDisable(enabled);
+        plusMinutesButton.setDisable(enabled);
+        plusHoursButton.setDisable(enabled);
+        minusSecondsButton.setDisable(enabled);
+        minusMinutesButton.setDisable(enabled);
+        minusHoursButton.setDisable(enabled);
+        taskList.setDisable(enabled);
+        assignTaskButton.setDisable(enabled);
+    }
 
 
 
