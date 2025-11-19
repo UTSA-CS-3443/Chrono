@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="updated timer screen and reduced redundant code">
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TimerController.java" afterDir="false" />
-    </list>
+    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="updated timer screen and reduced redundant code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
