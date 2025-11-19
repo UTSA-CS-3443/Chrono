@@ -1,0 +1,19 @@
+.red-theme-button{
+    -fx-background-color:
+        linear-gradient(to right, #E14752 0%, #E14752 25%, #C2202C 25%, #C2202C 50%, #9c0c18 50%, #9c0c18 75%, #6F0811 75%, #6F0811 100%);
+}
+.red-theme-button:disabled{
+    -fx-background-color:
+            linear-gradient(to right, #F4A3A8 0%, #F4A3A8 25%, #C2202C 25%, #C2202C 50%, #9c0c18 50%, #9c0c18 75%, #6F0811 75%, #6F0811 100%);
+}
+
+
+.green-theme-button{
+    -fx-background-color:
+        linear-gradient(to right, #A8E6A3 0%, #A8E6A3 25%, #4CAF50 25%, #4CAF50 50%, #2E7D32 50%, #2E7D32 75%, #1B4F22 75%, #1B4F22 100%);
+}
+
+.default-theme-button{
+    -fx-background-color:
+            linear-gradient(to right, #E14752 0%, #E14752 25%, #C2202C 25%, #C2202C 50%, #9c0c18 50%, #9c0c18 75%, #6F0811 75%, #6F0811 100%);
+}
