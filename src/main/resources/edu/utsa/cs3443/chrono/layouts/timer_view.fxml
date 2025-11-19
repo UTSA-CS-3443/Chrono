@@ -5,72 +5,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.TimerController">
-   <left>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="240.0" style="-fx-background-color: #193339;" BorderPane.alignment="CENTER">
-         <children>
-            <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="48.0" prefWidth="240.0" style="-fx-background-color: 193339;" text="Checklist" textFill="WHITE">
-               <font>
-                  <Font name="Inter Regular" size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="95.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="48.0" prefWidth="240.0" style="-fx-background-color: 193339;" text="Task Timer" textFill="WHITE">
-               <font>
-                  <Font name="Inter Regular" size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="120.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="48.0" prefWidth="240.0" style="-fx-background-color: 193339;" text="Creature" textFill="WHITE">
-               <font>
-                  <Font name="Inter Regular" size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="145.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="48.0" prefWidth="240.0" style="-fx-background-color: 193339;" text="Themes" textFill="WHITE">
-               <font>
-                  <Font name="Inter Regular" size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="10.0" layoutY="170.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="48.0" prefWidth="240.0" style="-fx-background-color: 193339;" text="Store" textFill="WHITE">
-               <font>
-                  <Font name="Inter Regular" size="16.0" />
-               </font>
-            </Button>
-         </children>
-      </VBox>
-   </left>
-   <top>
-      <AnchorPane prefHeight="20.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <Rectangle arcHeight="5.0" fill="#193339" height="64.0" stroke="#47343400" strokeMiterLimit="1.0" strokeType="INSIDE" width="1440.0" />
-            <Label layoutX="272.0" layoutY="20.0" text="TASK TIMER" textFill="WHITE">
-               <font>
-                  <Font name="Inter 18pt SemiBold" size="22.0" />
-               </font>
-            </Label>
-            <Label layoutX="87.0" layoutY="24.0" text="Chrono" textFill="WHITE">
-               <font>
-                  <Font name="Inter 18pt SemiBold" size="18.0" />
-               </font>
-            </Label>
-         </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </AnchorPane>
-   </top>
-   <center>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+
+<AnchorPane prefHeight="793.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.TimerController">
+   <children>
+      <AnchorPane layoutX="1.0" layoutY="-3.0" prefHeight="959.0" prefWidth="1206.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f0f0" height="959.0" layoutX="800.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <ListView fx:id="taskList" layoutX="400.0" prefHeight="699.0" prefWidth="400.0" stylesheets="@Chrono/src/main/resources/edu/utsa/cs3443/chrono/layouts/timerList.css" AnchorPane.bottomAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ListView fx:id="taskList" layoutX="400.0" prefHeight="699.0" prefWidth="400.0" stylesheets="@timerList.css" AnchorPane.bottomAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <opaqueInsets>
                   <Insets />
-               </opaqueInsets></ListView>
+               </opaqueInsets>
+            </ListView>
             <HBox alignment="CENTER" layoutX="52.0" layoutY="360.0" prefHeight="88.0" prefWidth="760.0" stylesheets="@ghost-buttons.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0">
                <children>
                   <Button fx:id="plusSecondsButton" alignment="CENTER" mnemonicParsing="false" onAction="#plusSeconds" prefHeight="50.0" prefWidth="100.0" text="+5s" textFill="#668193">
@@ -163,8 +112,9 @@
             <Button fx:id="assignTaskButton" alignment="CENTER" layoutX="934.0" layoutY="710.0" mnemonicParsing="false" onAction="#assignTaskButtonPressed" stylesheets="@blue-buttons.css" text="Assign Task" textFill="WHITE" AnchorPane.bottomAnchor="200.0" AnchorPane.rightAnchor="115.0">
                <font>
                   <Font size="24.0" />
-               </font></Button>
+               </font>
+            </Button>
          </children>
       </AnchorPane>
-   </center>
-</BorderPane>
+   </children>
+</AnchorPane>

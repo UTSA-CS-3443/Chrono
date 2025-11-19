@@ -6,16 +6,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class ChronoApplication extends Application {
+    static Stage primaryStageReference;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loader = new FXMLLoader(
-                ChronoApplication.class.getResource("/edu/utsa/cs3443/chrono/layouts/main_ui.fxml")  // Make sure this filename is EXACT
+                ChronoApplication.class.getResource("/edu/utsa/cs3443/chrono/layouts/main_ui.fxml")// Make sure this filename is EXACT
         );
-
-        Scene scene = new Scene(loader.load(), 600, 400);
+        primaryStageReference = primaryStage;
+        Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Chrono");
         primaryStage.setResizable(true);  // optional

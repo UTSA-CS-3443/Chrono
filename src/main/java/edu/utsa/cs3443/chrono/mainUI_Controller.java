@@ -37,26 +37,31 @@ public class mainUI_Controller {
 
     public void goChecklist(ActionEvent actionEvent) {
         loadCenter("checklist_view.fxml");
-        //TODO: Set top pane header
+        ChronoApplication.primaryStageReference.setTitle("Checklist");
+        
     }
 
     public void goTimer(ActionEvent actionEvent) {
         loadCenter("timer_view.fxml");
-        //TODO: Set top pane header
+        ChronoApplication.primaryStageReference.setTitle("Task Timer");
+
     }
 
     public void goCreature(ActionEvent actionEvent) {
         loadCenter("creature_view.fxml");
-        //TODO: Set top pane header
+        ChronoApplication.primaryStageReference.setTitle("Creature");
+
     }
 
     public void goThemes(ActionEvent actionEvent) {
         loadCenter("themes_view.fxml");
-        //TODO: Set top pane header
+        ChronoApplication.primaryStageReference.setTitle("Themes");
+
     }
 
     public void goStore(ActionEvent actionEvent) throws IOException {
         loadCenter("store_view.fxml");
-        //TODO: Set top pane header
+        ChronoApplication.primaryStageReference.setTitle("Store");
+
     }
 }
