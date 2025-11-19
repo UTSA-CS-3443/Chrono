@@ -19,9 +19,9 @@
 
                 <Button id="checklistButton" onAction="#goChecklist" style="-fx-text-fill: white; -fx-background-color: #193339;" text="Checklist" />
                 <Button id="taskTimerButton" onAction="#goTimer" style="-fx-text-fill: white; -fx-background-color: #193339;" text="Task Timer" />
-                <Button id="creatureButton" onAction="#goCreature" style="-fx-text-fill: white; -fx-background-color: #668193;" text="Creature" />
+                <Button id="creatureButton" onAction="#goCreature" style="-fx-text-fill: white; -fx-background-color: #193339;" text="Creature" />
                 <Button id="themesButton" onAction="#goThemes" style="-fx-text-fill: white; -fx-background-color: #193339;" text="Themes" />
-                <Button id="storeButton" onAction="#goStore" style="-fx-text-fill: white; -fx-background-color: #193339;" text="Store" />
+                <Button id="storeButton" onAction="#goStore" style="-fx-text-fill: white; -fx-background-color: #668193;" text="Store" />
             </children>
         </VBox>
     </left>
@@ -32,7 +32,7 @@
                 <Insets left="20" />
             </padding>
             <children>
-                <Label id="screenLabel" style="-fx-text-fill: white; -fx-font-size: 20;" text="Creature" />
+                <Label id="screenLabel" style="-fx-text-fill: white; -fx-font-size: 20;" text="Store" />
             </children>
         </HBox>
     </top>
