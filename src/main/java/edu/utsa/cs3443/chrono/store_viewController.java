@@ -346,6 +346,15 @@ public class store_viewController{
     }
 
     public void buyGreen(ActionEvent actionEvent) {
+        if(coins >= 200){
+            greenThemeUnlock();
+            coins -= 200;
+            updateCoinCounter();
+        }
+    }
+
+    private void greenThemeUnlock(){
+        greenTheme.setStyle("-fx-background-color: #22AA2D");
     }
 
     public void buyPurple(ActionEvent actionEvent) {
