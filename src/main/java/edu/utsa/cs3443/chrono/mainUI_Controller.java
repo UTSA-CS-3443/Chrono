@@ -19,7 +19,7 @@ public class mainUI_Controller {
     @FXML
     private void initialize(){
         // set the welcome view to load on startup
-        loadCenter("store_view.fxml");
+        loadCenter("welcome_view.fxml");
     }
 
     private void loadCenter(String fxmlFileName) {
@@ -36,8 +36,13 @@ public class mainUI_Controller {
             layoutPane.setCenter(loader.load());
 
             Object controller = loader.getController();
+
+            // Pass main controller reference to sub-controllers
             if (controller instanceof WelcomeController wc) {
                 wc.setMainController(this);
+            } else if (controller instanceof CreatureController cc) {
+                // Added this check to link CreatureController
+                cc.setMainController(this);
             }
 
         } catch (Exception e) {
