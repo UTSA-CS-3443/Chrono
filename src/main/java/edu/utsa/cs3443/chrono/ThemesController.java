@@ -2,12 +2,8 @@ package edu.utsa.cs3443.chrono;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
 
-import java.util.Objects;
 
 public class ThemesController {
 
@@ -21,8 +17,6 @@ public class ThemesController {
     private Button greenThemeButton;
 
     @FXML
-    private Button applyTheme;
-    private boolean greenSelected;
     private String selectedTheme;
     private String activeTheme;
     private String priorTheme;
@@ -53,13 +47,11 @@ public class ThemesController {
 
     @FXML
     void greenThemePressed(ActionEvent event) {
-        greenSelected = true;
         selectedTheme = "green.css";
     }
 
     @FXML
     void defaultPressed(ActionEvent event) {
-        greenSelected = false;
         selectedTheme = "default.css";
     }
 
