@@ -16,7 +16,7 @@
     <VBox alignment="CENTER" spacing="30.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
 
         <!-- Creature Image Container -->
-        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #AFB5C5; -fx-background-radius: 20; -fx-max-width: 600; -fx-max-height: 400;">
+        <VBox id="creatureBackground" alignment="CENTER" prefHeight="400.0" prefWidth="500.0">
 
             <!-- IMAGE_PLACEHOLDER: Replace the empty Image url with your file -->
             <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
@@ -43,7 +43,7 @@
     </VBox>
 
     <!-- RIGHT SIDE: Stats Panel -->
-    <VBox prefWidth="350.0" spacing="25.0" style="-fx-background-color: #AFB5C5;">
+    <VBox id="creatureSideBar" prefWidth="350.0" spacing="25.0">
         <padding>
             <Insets bottom="30.0" left="30.0" right="30.0" top="40.0" />
         </padding>
@@ -53,7 +53,7 @@
             <Label text="Health" textFill="#333333">
                 <font><Font name="System Bold" size="12.0" /></font>
             </Label>
-            <ProgressBar fx:id="healthBar" maxWidth="Infinity" prefHeight="20.0" progress="0.7" style="-fx-accent: #668193; -fx-control-inner-background: #8FA0B0;" />
+            <ProgressBar fx:id="healthBar" maxWidth="Infinity" prefHeight="20.0" progress="0.7" />
         </VBox>
 
         <!-- Happiness -->
@@ -61,7 +61,7 @@
             <Label text="Happiness" textFill="#333333">
                 <font><Font name="System Bold" size="12.0" /></font>
             </Label>
-            <ProgressBar fx:id="happinessBar" maxWidth="Infinity" prefHeight="20.0" progress="0.5" style="-fx-accent: #668193; -fx-control-inner-background: #8FA0B0;" />
+            <ProgressBar fx:id="happinessBar" maxWidth="Infinity" prefHeight="20.0" progress="0.5" />
         </VBox>
 
         <!-- Coins -->
@@ -69,7 +69,7 @@
             <Label text="Coins" textFill="#333333">
                 <font><Font name="System Bold" size="12.0" /></font>
             </Label>
-            <ProgressBar fx:id="coinsBar" maxWidth="Infinity" prefHeight="20.0" progress="0.3" style="-fx-accent: #668193; -fx-control-inner-background: #8FA0B0;" />
+            <ProgressBar fx:id="coinsBar" maxWidth="Infinity" prefHeight="20.0" progress="0.3" />
         </VBox>
 
         <!-- Recent Rewards Section -->
@@ -80,11 +80,11 @@
             </Label>
 
             <!-- Reward Items -->
-            <Label alignment="CENTER" maxWidth="Infinity" prefHeight="40.0" style="-fx-background-color: #9CA7B9; -fx-background-radius: 5;" text="+5 coins">
+            <Label id="recentRewards" alignment="CENTER" maxWidth="Infinity" prefHeight="40.0" text="+5 coins">
                 <font><Font size="14.0" /></font>
             </Label>
 
-            <Label alignment="CENTER" maxWidth="Infinity" prefHeight="40.0" style="-fx-background-color: #9CA7B9; -fx-background-radius: 5;" text="Daily Login Bonus">
+            <Label id="recentRewards" alignment="CENTER" maxWidth="Infinity" prefHeight="40.0" text="Daily Login Bonus">
                 <font><Font size="14.0" /></font>
             </Label>
         </VBox>

@@ -127,4 +127,26 @@
     -fx-text-box-border: transparent;
 }
 
+//Creature Screen//
+#creatureBackground{
+    -fx-background-color: #AFB5C5;
+    -fx-background-radius: 20;
+    -fx-max-width: 600;
+    -fx-max-height: 400;
+}
+#creatureSideBar{
+    -fx-background-color: #AFB5C5;
+}
+.progress-bar{
+    -fx-accent: #668193;
+    -fx-control-inner-background:  #8FA0B0;
+}
+#recentRewards{
+    -fx-background-color: #9CA7B9;
+    -fx-background-radius: 5
+
+}
+
+
+
 
