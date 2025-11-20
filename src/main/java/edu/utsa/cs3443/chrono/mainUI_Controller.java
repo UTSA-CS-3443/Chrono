@@ -19,7 +19,7 @@ public class mainUI_Controller {
     @FXML
     private void initialize(){
         // set the welcome view to load on startup
-        loadCenter("welcome_view.fxml");
+        loadCenter("store_view.fxml");
     }
 
     private void loadCenter(String fxmlFileName) {
