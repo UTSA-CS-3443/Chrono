@@ -73,8 +73,8 @@ public class TimerController {
         timeline.setCycleCount(Timeline.INDEFINITE);
 
         TaskManager tm = new TaskManager();
-        tm.addTask("test 1", 10);
-        tm.addTask("test 2", 20);
+        //tm.addTask("test 1", 10); Notated out because were creating new tasks every time you visit the page -Collin Schiebel
+        //tm.addTask("test 2", 20);
         ObservableList<Task> tasks = FXCollections.observableArrayList();
         tasks.addAll(tm.getTasks());
         taskList.setItems(tasks);
