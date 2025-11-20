@@ -5,8 +5,8 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.ThemesController">
    <children>
-      <Button fx:id="redThemeButton" layoutX="26.0" layoutY="64.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="380.0" stylesheets="@themes.css" text="Button" />
-      <Button fx:id="greenThemeButton" layoutX="26.0" layoutY="125.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="380.0" stylesheets="@themes.css" text="Button" />
-      <Button fx:id="defaultThemeButton" layoutX="26.0" layoutY="188.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="380.0" stylesheets="@themes.css" text="Button" />
+      <Button fx:id="redThemeButton" alignment="BOTTOM_LEFT" disable="true" layoutX="26.0" layoutY="64.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="380.0" stylesheets="@themes.css" text="Button" />
+      <Button fx:id="greenThemeButton" alignment="BOTTOM_LEFT" disable="true" layoutX="26.0" layoutY="125.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="380.0" stylesheets="@themes.css" text="Button" />
+      <Button fx:id="defaultThemeButton" alignment="BOTTOM_LEFT" layoutX="26.0" layoutY="188.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="380.0" stylesheets="@themes.css" text="Default" />
    </children>
 </AnchorPane>
