@@ -9,20 +9,19 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="793.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.TimerController">
    <children>
       <AnchorPane layoutX="1.0" layoutY="-3.0" prefHeight="959.0" prefWidth="1206.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f0f0" height="959.0" layoutX="800.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <ListView fx:id="taskList" layoutX="400.0" prefHeight="699.0" prefWidth="400.0" stylesheets="@timerList.css" AnchorPane.bottomAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Rectangle id="timerRectangle" arcHeight="5.0" arcWidth="5.0" fill="#f0f0f0" height="959.0" layoutX="800.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ListView fx:id="taskList" layoutX="400.0" prefHeight="699.0" prefWidth="400.0" AnchorPane.bottomAnchor="260.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </ListView>
-            <HBox alignment="CENTER" layoutX="52.0" layoutY="360.0" prefHeight="88.0" prefWidth="760.0" stylesheets="@ghost-buttons.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0">
+            <HBox id="timerButtons" alignment="CENTER" layoutX="52.0" layoutY="360.0" prefHeight="88.0" prefWidth="760.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0">
                <children>
-                  <Button fx:id="plusSecondsButton" alignment="CENTER" mnemonicParsing="false" onAction="#plusSeconds" prefHeight="50.0" prefWidth="100.0" text="+5s" textFill="#668193">
+                  <Button id="timerButtons" fx:id="plusSecondsButton" alignment="CENTER" mnemonicParsing="false" onAction="#plusSeconds" prefHeight="50.0" prefWidth="100.0" text="+5s" textFill="#668193">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
@@ -69,7 +68,7 @@
                   </Button>
                </children>
             </HBox>
-            <HBox alignment="CENTER" layoutX="43.0" layoutY="457.0" prefHeight="154.0" prefWidth="703.0" stylesheets="@blue-buttons.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0">
+            <HBox alignment="CENTER" layoutX="43.0" layoutY="457.0" prefHeight="154.0" prefWidth="703.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="400.0">
                <children>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#startTimer" prefHeight="75.0" prefWidth="200.0" text="Start" textFill="WHITE">
                      <HBox.margin>
@@ -109,7 +108,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button fx:id="assignTaskButton" alignment="CENTER" layoutX="934.0" layoutY="710.0" mnemonicParsing="false" onAction="#assignTaskButtonPressed" stylesheets="@blue-buttons.css" text="Assign Task" textFill="WHITE" AnchorPane.bottomAnchor="200.0" AnchorPane.rightAnchor="115.0">
+            <Button fx:id="assignTaskButton" alignment="CENTER" layoutX="934.0" layoutY="710.0" mnemonicParsing="false" onAction="#assignTaskButtonPressed" text="Assign Task" textFill="WHITE" AnchorPane.bottomAnchor="200.0" AnchorPane.rightAnchor="115.0">
                <font>
                   <Font size="24.0" />
                </font>

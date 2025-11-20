@@ -10,6 +10,7 @@ import java.util.Objects;
 
 public class ChronoApplication extends Application {
     static Stage primaryStageReference;
+    static Scene sceneReference;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -18,6 +19,8 @@ public class ChronoApplication extends Application {
         );
         primaryStageReference = primaryStage;
         Scene scene = new Scene(loader.load());
+        sceneReference = scene;
+        scene.getStylesheets().add(ChronoApplication.class.getResource("layouts/default.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Chrono");
         primaryStage.setResizable(true);  // optional
