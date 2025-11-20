@@ -10,93 +10,92 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.store_viewController">
-   <children>
-      <VBox prefHeight="400.0" prefWidth="447.0" spacing="25.0">
-         <children>
-            <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Themes" />
-            <VBox spacing="12.0">
-               <children>
-                  <StackPane fx:id="redTheme" prefHeight="70.0" style="-fx-background-color: #4A1C1C; -fx-background-radius: 10;">
-                     <children>
-                        <Label style="-fx-text-fill: white;" text="Red - 200 Coins" />
-                        <Button fx:id="redThemeButton" mnemonicParsing="false" onAction="#buyRed" opacity="0.0" prefHeight="57.0" prefWidth="401.0" />
-                     </children>
-                  </StackPane>
-                  <StackPane fx:id="greenTheme" prefHeight="70.0" style="-fx-background-color: #22332D; -fx-background-radius: 10;">
-                     <children>
-                        <Label style="-fx-text-fill: white;" text="Green - 200 Coins" />
-                        <Button fx:id="greenThemeButton" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="401.0" />
-                     </children>
-                  </StackPane>
-                  <StackPane fx:id="purpleTheme" prefHeight="70.0" style="-fx-background-color: #342544; -fx-background-radius: 10;">
-                     <children>
-                        <Label style="-fx-text-fill: white;" text="Purple - 200 Coins" />
-                        <Button fx:id="purpleThemeButton" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="401.0" />
-                     </children>
-                  </StackPane>
-                  <StackPane fx:id="orangeTheme" prefHeight="70.0" style="-fx-background-color: #5A3B10; -fx-background-radius: 10;">
-                     <children>
-                        <Label style="-fx-text-fill: white;" text="Orange - 200 Coins" />
-                        <Button fx:id="orangeThemeButton" mnemonicParsing="false" opacity="0.0" prefHeight="57.0" prefWidth="401.0" />
-                     </children>
-                  </StackPane>
-               </children>
-            </VBox>
-            <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Cosmetics" />
-            <TilePane hgap="10" prefColumns="8" vgap="10">
-               <children>
-                  <StackPane fx:id="cosmetic1" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
-                     <children>
-                        <Label style="-fx-text-fill: white;" text="100 Coins" />
-                        <Button fx:id="cosmetic1Button" mnemonicParsing="false" opacity="0.0" prefHeight="98.0" prefWidth="117.0" />
-                     </children>
-                  </StackPane>
-                  <StackPane fx:id="cosmetic2" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
-                     <children>
-                        <Label style="-fx-text-fill: white;" text="100 Coins" />
-                        <Button fx:id="cosmetic2Button" mnemonicParsing="false" opacity="0.0" prefHeight="98.0" prefWidth="117.0" />
-                     </children>
-                  </StackPane>
-                  <StackPane fx:id="cosmetic3" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
-                     <children>
-                        <Label style="-fx-text-fill: white;" text="100 Coins" />
-                        <Button fx:id="cosmetic3Button" mnemonicParsing="false" opacity="0.0" prefHeight="98.0" prefWidth="117.0" />
-                     </children>
-                  </StackPane>
-               </children>
-            </TilePane>
-         </children>
-      </VBox>
-      <VBox fx:id="dailyBackground" prefHeight="400.0" prefWidth="245.0" spacing="20.0" style="-fx-background-color: #AFB5C5;">
-         <padding>
-            <Insets bottom="20" left="20" right="20" top="20" />
-         </padding>
-         <children>
-            <HBox alignment="CENTER_LEFT" spacing="10.0">
-               <children>
-                  <Circle fill="#F1DF4C" radius="20" />
-                  <Label fx:id="coinCounter" style="-fx-font-size: 18; -fx-font-weight: bold;" text="x 0" />
-               </children>
-            </HBox>
-            <VBox spacing="18.0" style="-fx-background-color: #8DA0B3; -fx-background-radius: 20;">
-               <padding>
-                  <Insets bottom="20" left="20" right="20" top="20" />
-               </padding>
-               <children>
-                  <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Daily Tasks" />
-                  <Button fx:id="task1" style="-fx-background-color: white; -fx-background-radius: 10;" text="Create a new task" />
-                  <Button fx:id="task2" style="-fx-background-color: white; -fx-background-radius: 10;" text="Feed your creature" />
-                  <VBox spacing="5">
-                     <children>
-                        <Button fx:id="task3" style="-fx-background-color: white; -fx-background-radius: 10;" text="Complete 3 tasks" />
-                        <ProgressBar fx:id="midnightProgress" prefWidth="240" progress="0.2" />
-                        <Label fx:id="timeLabel" style="-fx-font-size: 12;" text="16 hrs 32 mins 49 sec" />
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-   </children>
+<HBox xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.store_viewController">
+    <children>
+        <VBox spacing="25.0" HBox.hgrow="ALWAYS">
+            <children>
+                <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Themes" />
+
+                <VBox spacing="12.0">
+                    <children>
+                        <StackPane fx:id="redTheme" prefHeight="70.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #4A1C1C; -fx-background-radius: 10;">
+                            <children>
+                                <Label style="-fx-text-fill: white;" text="Red - 200 Coins" />
+                            </children>
+                        </StackPane>
+                        <StackPane fx:id="greenTheme" prefHeight="70.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #22332D; -fx-background-radius: 10;">
+                            <children>
+                                <Label style="-fx-text-fill: white;" text="Green - 200 Coins" />
+                            </children>
+                        </StackPane>
+                        <StackPane fx:id="purpleTheme" prefHeight="70.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #342544; -fx-background-radius: 10;">
+                            <children>
+                                <Label style="-fx-text-fill: white;" text="Purple - 200 Coins" />
+                            </children>
+                        </StackPane>
+                        <StackPane fx:id="orangeTheme" prefHeight="70.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #5A3B10; -fx-background-radius: 10;">
+                            <children>
+                                <Label style="-fx-text-fill: white;" text="Orange - 200 Coins" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </VBox>
+
+                <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Cosmetics" />
+
+                <TilePane hgap="10" prefColumns="8" vgap="10" maxWidth="1.7976931348623157E308">
+                    <children>
+                        <StackPane fx:id="cosmetic1" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
+                            <children>
+                                <Label style="-fx-text-fill: white;" text="100 Coins" />
+                            </children>
+                        </StackPane>
+                        <StackPane fx:id="cosmetic2" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
+                            <children>
+                                <Label style="-fx-text-fill: white;" text="100 Coins" />
+                            </children>
+                        </StackPane>
+                        <StackPane fx:id="cosmetic3" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
+                            <children>
+                                <Label style="-fx-text-fill: white;" text="100 Coins" />
+                            </children>
+                        </StackPane>
+                    </children>
+                </TilePane>
+            </children>
+        </VBox>
+
+        <VBox fx:id="dailyBackground" prefWidth="245.0" spacing="20.0" style="-fx-background-color: #AFB5C5;">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <children>
+                        <Circle fill="#F1DF4C" radius="20" />
+                        <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="x 280" />
+                    </children>
+                </HBox>
+
+                <VBox spacing="18.0" style="-fx-background-color: #8DA0B3; -fx-background-radius: 20;">
+                    <padding>
+                        <Insets bottom="20" left="20" right="20" top="20" />
+                    </padding>
+                    <children>
+                        <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Daily Tasks" />
+
+                        <Button fx:id="task1" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10;" text="Create a new task" />
+                        <Button fx:id="task2" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10;" text="Feed your creature" />
+                        <VBox spacing="5">
+                            <children>
+                                <Button fx:id="task3" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10;" text="Complete 3 tasks" />
+                                <ProgressBar fx:id="midnightProgress" maxWidth="1.7976931348623157E308" progress="0.2" />
+                                <Label fx:id="timeLabel" style="-fx-font-size: 12;" text="16 hrs 32 mins 49 sec" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
 </HBox>
