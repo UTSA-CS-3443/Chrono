@@ -71,7 +71,9 @@ public class store_viewController{
         loadOrResetDailyProgress();
         MidnightCountdown countdown = new MidnightCountdown(timeLabel, midnightProgress);
         countdown.start();
-        loadUnlocks();
+        //loadUnlocks();
+        coins = 200;
+        updateCoinCounter();
     }
 
 
