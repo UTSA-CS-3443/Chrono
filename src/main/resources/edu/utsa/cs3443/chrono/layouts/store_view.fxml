@@ -26,19 +26,19 @@
                         </StackPane>
                         <StackPane fx:id="greenTheme" maxWidth="1.7976931348623157E308" prefHeight="70.0" style="-fx-background-color: #22332D; -fx-background-radius: 10;">
                             <children>
-                        <Button fx:id="greenThemeButton" mnemonicParsing="false" onAction="#buyRed" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
+                        <Button fx:id="greenThemeButton" mnemonicParsing="false" onAction="#buyGreen" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
                                 <Label style="-fx-text-fill: white;" text="Green - 200 Coins" />
                             </children>
                         </StackPane>
                         <StackPane fx:id="purpleTheme" maxWidth="1.7976931348623157E308" prefHeight="70.0" style="-fx-background-color: #342544; -fx-background-radius: 10;">
                             <children>
-                        <Button fx:id="purpleThemeButton" mnemonicParsing="false" onAction="#buyRed" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
+                        <Button fx:id="purpleThemeButton" mnemonicParsing="false" onAction="#buyPurple" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
                                 <Label style="-fx-text-fill: white;" text="Purple - 200 Coins" />
                             </children>
                         </StackPane>
                         <StackPane fx:id="orangeTheme" maxWidth="1.7976931348623157E308" prefHeight="70.0" style="-fx-background-color: #5A3B10; -fx-background-radius: 10;">
                             <children>
-                        <Button fx:id="orangeThemeButton" mnemonicParsing="false" onAction="#buyRed" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
+                        <Button fx:id="orangeThemeButton" mnemonicParsing="false" onAction="#buyOrange" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
                                 <Label style="-fx-text-fill: white;" text="Orange - 200 Coins" />
                             </children>
                         </StackPane>
@@ -51,19 +51,19 @@
                     <children>
                         <StackPane fx:id="cosmetic1" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
                             <children>
-                        <Button fx:id="cosmetic1Button" mnemonicParsing="false" onAction="#buyRed" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
+                        <Button fx:id="cosmetic1Button" mnemonicParsing="false" onAction="#buyCosmetic1" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
                                 <Label style="-fx-text-fill: white;" text="100 Coins" />
                             </children>
                         </StackPane>
                         <StackPane fx:id="cosmetic2" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
                             <children>
-                        <Button fx:id="cosmetic2Button" mnemonicParsing="false" onAction="#buyRed" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
+                        <Button fx:id="cosmetic2Button" mnemonicParsing="false" onAction="#buyCosmetic2" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
                                 <Label style="-fx-text-fill: white;" text="100 Coins" />
                             </children>
                         </StackPane>
                         <StackPane fx:id="cosmetic3" prefHeight="80" prefWidth="80" style="-fx-background-color: #2E2E2E;">
                             <children>
-                        <Button fx:id="cosmetic3Button" mnemonicParsing="false" onAction="#buyRed" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
+                        <Button fx:id="cosmetic3Button" mnemonicParsing="false" onAction="#buyCosmetic3" opacity="0.0" prefHeight="126.0" prefWidth="709.0" />
                                 <Label style="-fx-text-fill: white;" text="100 Coins" />
                             </children>
                         </StackPane>

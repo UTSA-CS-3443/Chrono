@@ -298,7 +298,7 @@ public class store_viewController{
     }
 
 
-    private String unlockFilePath = "/edu/utsa/cs3443/chrono/files/unlocks.txt";
+    private final String unlockFilePath = "/edu/utsa/cs3443/chrono/files/unlocks.txt";
     private void saveUnlocks(){
         Path path = Paths.get(unlockFilePath);
 
@@ -343,5 +343,23 @@ public class store_viewController{
     private void redThemeUnlock(){
         redTheme.setStyle("-fx-background-color: #9E1C1C");
         // redTheme.setStyle("-fx-background-radius: 10"); changing the radius to not make it square makes it transparent for some reason
+    }
+
+    public void buyGreen(ActionEvent actionEvent) {
+    }
+
+    public void buyPurple(ActionEvent actionEvent) {
+    }
+
+    public void buyOrange(ActionEvent actionEvent) {
+    }
+
+    public void buyCosmetic1(ActionEvent actionEvent) {
+    }
+
+    public void buyCosmetic2(ActionEvent actionEvent) {
+    }
+
+    public void buyCosmetic3(ActionEvent actionEvent) {
     }
 }
