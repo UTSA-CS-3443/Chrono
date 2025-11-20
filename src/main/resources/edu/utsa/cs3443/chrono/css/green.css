@@ -8,6 +8,7 @@
     -fx-background-color: #2E7D32;
     -fx-text-fill: white;
     -fx-background-radius: 12;
+    -fx-cursor:hand;
 }
 .button:hover{
     -fx-background-color: #2C6539;
@@ -43,6 +44,7 @@
     -fx-background-color: #EEF1EF;
     -fx-background-radius: 12px;
     -fx-text-fill: black;
+    -fx-cursor:hand;
 }
 
 .list-cell:empty{

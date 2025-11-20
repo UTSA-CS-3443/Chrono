@@ -1,10 +1,14 @@
+// background //
 .root{
-    -fx-background-color: "#f0f0f0";
+    -fx-background-color: #f0f0f0;
 }
+
+// Buttons //
 .button{
     -fx-background-color: #668193;
     -fx-text-fill: white;
     -fx-background-radius: 12;
+    -fx-cursor:hand;
 }
 .button:hover{
     -fx-background-color: #4a6773;
@@ -15,20 +19,8 @@
 #timerRectangle{
     -fx-fill: #AFB5C5;
 }
-.list-view {
-    -fx-background-color: #AFB5C5;
-    -fx-padding: 10px;
-    -fx-spacing: 10px;
-}
 
-.list-cell {
-    -fx-padding: 25px;
-    -fx-background-insets: 5, 0 0 10 0;
-    -fx-background-color: white;
-    -fx-background-radius: 12px;
-    -fx-text-fill: black;
-}
-
+// ghost buttons //
 #timerButtons > .button{
                     -fx-background-color: transparent;
                     -fx-text-fill: #668193;
@@ -44,6 +36,21 @@
                    -fx-background-color: #d0d0d0
                 }
 
+// list view //
+.list-view {
+    -fx-background-color: #AFB5C5;
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+
+.list-cell {
+    -fx-padding: 25px;
+    -fx-background-insets: 5, 0 0 10 0;
+    -fx-background-color: white;
+    -fx-background-radius: 12px;
+    -fx-text-fill: black;
+    -fx-cursor:hand;
+}
 .list-cell:empty{
     -fx-background-color: transparent;
 }
@@ -61,6 +68,7 @@
     -fx-text-fill: white;
 }
 
+//Main UI//
 #sideBar{
     -fx-background-color:  #193339;
 }
@@ -77,3 +85,46 @@
 #header{
     -fx-background-color:  #193339;
 }
+
+// Text Fields //
+.text-field{
+    -fx-background-color:  #AFB5C5;
+    -fx-background-radius: 10;
+    -fx-text-fill: #333;
+    -fx-prompt-text-fill: #555;
+}
+
+// Checklist Elements //
+.task-card{
+    -fx-background-color: #AFB5C5;
+    -fx-background-radius: 10;
+}
+.task-checkbox{
+    -fx-color: #668193;
+    -fx-font-size: 16px;
+}
+#checklistView{
+    -fx-background-color: #f0f0f0;
+}
+
+#checklistBackground{
+    -fx-background-color: #f0f0f0;
+}
+
+#taskSideBar{
+    -fx-background-color: #AFB5C5;
+}
+
+#taskDetails{
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-padding: 5;
+}
+#taskDetails > .text-area{
+    -fx-background-color: transparent;
+    -fx-control-inner-background:  #AFB5C5;
+    -fx-text-box-border: transparent;
+}
+
+
