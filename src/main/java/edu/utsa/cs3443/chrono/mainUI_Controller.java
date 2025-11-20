@@ -3,18 +3,62 @@ package edu.utsa.cs3443.chrono;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 
 public class mainUI_Controller {
 
     @FXML
-    private BorderPane layoutPane;
+    private Button checklistButton;
+
+    @FXML
+    private Button creatureButton;
+
+    @FXML
+    private AnchorPane header;
 
     @FXML
     private Label headerLabel;
+
+    @FXML
+    private BorderPane layoutPane;
+
+    @FXML
+    private VBox sidebarVbox;
+
+    @FXML
+    private Button storeButton;
+
+    @FXML
+    private Button themesButton;
+
+    @FXML
+    private Button timerButton;
+
+    public Button getChecklistButton() {
+        return checklistButton;
+    }
+
+    public Button getCreatureButton() {
+        return creatureButton;
+    }
+
+    public Button getStoreButton() {
+        return storeButton;
+    }
+
+    public Button getThemesButton() {
+        return themesButton;
+    }
+
+    public Button getTimerButton() {
+        return timerButton;
+    }
 
     @FXML
     private void initialize(){
@@ -36,13 +80,11 @@ public class mainUI_Controller {
             layoutPane.setCenter(loader.load());
 
             Object controller = loader.getController();
-
-            // Pass main controller reference to sub-controllers
             if (controller instanceof WelcomeController wc) {
                 wc.setMainController(this);
-            } else if (controller instanceof CreatureController cc) {
-                // Added this check to link CreatureController
-                cc.setMainController(this);
+            }
+            if (controller instanceof ThemesController tc) {
+                tc.setMainController(this);
             }
 
         } catch (Exception e) {
@@ -83,5 +125,12 @@ public class mainUI_Controller {
         ChronoApplication.primaryStageReference.setTitle("Chrono - Store");
         headerLabel.setText("Store");
 
+    }
+
+    public AnchorPane getHeader(){
+        return header;
+    }
+    public VBox getSidebarVbox(){
+        return sidebarVbox;
     }
 }
