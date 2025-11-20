@@ -14,14 +14,32 @@
 <BorderPane fx:id="layoutPane" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.mainUI_Controller">
 
     <left>
-        <VBox prefWidth="240.0" spacing="20.0" style="-fx-background-color: #193339;" BorderPane.alignment="TOP_LEFT">
-            <padding>
-                <Insets bottom="20" left="20" right="20" top="20" />
-            </padding>
+        <VBox id="sideBar" prefWidth="240.0" BorderPane.alignment="TOP_LEFT">
             <children>
-                <Label style="-fx-text-fill: white; -fx-font-size: 22; -fx-font-weight: bold;" text="Chrono" />
+                <Label style="-fx-text-fill: white; -fx-font-size: 22; -fx-font-weight: bold;" text="Chrono">
+               <VBox.margin>
+                  <Insets bottom="20.0" left="10.0" />
+               </VBox.margin></Label>
 
-                <Button id="checklistButton" maxWidth="Infinity" onAction="#goChecklist" style="-fx-background-color: #193339;" text="Checklist" textFill="WHITE">
+                <Button id="checklistButton" maxWidth="Infinity" onAction="#goChecklist" prefHeight="50.0" prefWidth="240.0" text="Checklist" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Button>
+
+                <Button id="taskTimerButton" maxWidth="Infinity" onAction="#goTimer" prefHeight="50.0" prefWidth="240.0" text="Task Timer" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -36,7 +54,7 @@
                         </Lighting>
                     </effect></Button>
 
-                <Button id="taskTimerButton" maxWidth="Infinity" onAction="#goTimer" style="-fx-background-color: #193339;" text="Task Timer" textFill="WHITE">
+                <Button id="creatureButton" maxWidth="Infinity" onAction="#goCreature" prefHeight="50.0" prefWidth="240.0" text="Creature" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -51,7 +69,7 @@
                         </Lighting>
                     </effect></Button>
 
-                <Button id="creatureButton" maxWidth="Infinity" onAction="#goCreature" style="-fx-background-color: #193339;" text="Creature" textFill="WHITE">
+                <Button id="themesButton" maxWidth="Infinity" onAction="#goThemes" prefHeight="50.0" prefWidth="240.0" text="Themes" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -66,22 +84,7 @@
                         </Lighting>
                     </effect></Button>
 
-                <Button id="themesButton" maxWidth="Infinity" onAction="#goThemes" style="-fx-background-color: #193339;" text="Themes" textFill="WHITE">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                    <effect>
-                        <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
-                            <light>
-                                <Light.Distant />
-                            </light>
-                        </Lighting>
-                    </effect></Button>
-
-                <Button id="storeButton" maxWidth="Infinity" onAction="#goStore" style="-fx-background-color: #193339;" text="Store" textFill="WHITE">
+                <Button id="storeButton" maxWidth="Infinity" onAction="#goStore" prefHeight="50.0" prefWidth="240.0" text="Store" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -100,7 +103,7 @@
     </left>
 
     <top>
-        <AnchorPane prefHeight="64.0" style="-fx-background-color: #193339;" BorderPane.alignment="CENTER">
+        <AnchorPane id="header" prefHeight="64.0" BorderPane.alignment="CENTER">
             <children>
 
                 <Label id="screenLabel" fx:id="headerLabel" layoutX="272.0" layoutY="20.0" style="-fx-font-size: 20; -fx-font-weight: bold;" textFill="WHITE" />

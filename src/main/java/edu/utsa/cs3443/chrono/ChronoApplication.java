@@ -20,7 +20,7 @@ public class ChronoApplication extends Application {
         primaryStageReference = primaryStage;
         Scene scene = new Scene(loader.load());
         sceneReference = scene;
-        scene.getStylesheets().add(ChronoApplication.class.getResource("layouts/default.css").toExternalForm());
+        scene.getStylesheets().add(ChronoApplication.class.getResource("css/default.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Chrono");
         primaryStage.setResizable(true);  // optional

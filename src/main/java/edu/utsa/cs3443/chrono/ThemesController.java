@@ -55,7 +55,6 @@ public class ThemesController {
     void greenThemePressed(ActionEvent event) {
         greenSelected = true;
         selectedTheme = "green.css";
-
     }
 
     @FXML
@@ -65,8 +64,8 @@ public class ThemesController {
     }
 
     void changeTheme(String newCSS,String oldCSS){
-        ChronoApplication.sceneReference.getStylesheets().remove(ChronoApplication.class.getResource("layouts/" + oldCSS).toExternalForm());
-        ChronoApplication.sceneReference.getStylesheets().add(ChronoApplication.class.getResource("layouts/" + newCSS).toExternalForm());
+        ChronoApplication.sceneReference.getStylesheets().remove(ChronoApplication.class.getResource("css/" + oldCSS).toExternalForm());
+        ChronoApplication.sceneReference.getStylesheets().add(ChronoApplication.class.getResource("css/" + newCSS).toExternalForm());
     }
 
     @FXML
@@ -75,39 +74,5 @@ public class ThemesController {
         changeTheme(selectedTheme,priorTheme);
         activeTheme = selectedTheme;
         priorTheme = activeTheme;
-
-        if (mc == null) {
-            System.out.println("Main controller not set");
-            return;
-        }
-
-        if (mc.getSidebarVbox() == null) {
-            System.out.println("sidebarVbox not injected!");
-            return;
-        }
-
-        if(greenSelected) {
-            mc.getSidebarVbox().setStyle("-fx-background-color: #1B4F22;");
-            mc.getHeader().setStyle("-fx-background-color: #1B4F22;");
-            mc.getChecklistButton().setStyle("-fx-background-color: #1B4F22;");
-            mc.getTimerButton().setStyle("-fx-background-color: #1B4F22;");
-            mc.getStoreButton().setStyle("-fx-background-color: #1B4F22;");
-            mc.getCreatureButton().setStyle("-fx-background-color: #1B4F22;");
-            mc.getThemesButton().setStyle("-fx-background-color: #1B4F22;");
-            applyTheme.getStyleClass().add("green-button");
-        }else{
-            mc.getSidebarVbox().setStyle("-fx-background-color: #193339;");
-            mc.getHeader().setStyle("-fx-background-color: #193339;");
-            mc.getChecklistButton().setStyle("-fx-background-color: #193339;");
-            mc.getTimerButton().setStyle("-fx-background-color: #193339;");
-            mc.getStoreButton().setStyle("-fx-background-color: #193339;");
-            mc.getCreatureButton().setStyle("-fx-background-color: #193339;");
-            mc.getThemesButton().setStyle("-fx-background-color: #193339;");
-            applyTheme.getStyleClass().remove("green-button");
-        }
-
     }
-
-
-
 }

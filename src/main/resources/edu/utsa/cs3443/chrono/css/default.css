@@ -12,8 +12,11 @@
 .button:pressed{
     -fx-background-color: #384d55;
 }
+#timerRectangle{
+    -fx-fill: #AFB5C5;
+}
 .list-view {
-    -fx-background-color: #f0f0f0;
+    -fx-background-color: #AFB5C5;
     -fx-padding: 10px;
     -fx-spacing: 10px;
 }
@@ -54,6 +57,23 @@
 }
 
 .list-cell:selected {
-    -fx-background-color:  #668193;
+    -fx-background-color:  #193339;
     -fx-text-fill: white;
+}
+
+#sideBar{
+    -fx-background-color:  #193339;
+}
+
+#sideBar > .button{
+    -fx-background-color:  transparent;
+    -fx-background-radius: 0px;
+}
+#sideBar > .button:hover{
+    -fx-background-color:  #668193;
+    -fx-background-radius: 0px;
+}
+
+#header{
+    -fx-background-color:  #193339;
 }
