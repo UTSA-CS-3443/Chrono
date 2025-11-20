@@ -5,7 +5,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <BorderPane fx:id="layoutPane" prefHeight="1024.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.mainUI_Controller">
@@ -19,87 +18,87 @@
                 <Label style="-fx-text-fill: white; -fx-font-size: 22; -fx-font-weight: bold;" text="Chrono" />
 
                 <Button id="checklistButton" maxWidth="Infinity" onAction="#goChecklist" style="-fx-background-color: #193339;" text="Checklist" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect></Button>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect></Button>
 
                 <Button id="taskTimerButton" maxWidth="Infinity" onAction="#goTimer" style="-fx-background-color: #193339;" text="Task Timer" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect></Button>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect></Button>
 
                 <Button id="creatureButton" maxWidth="Infinity" onAction="#goCreature" style="-fx-background-color: #193339;" text="Creature" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect></Button>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect></Button>
 
                 <Button id="themesButton" maxWidth="Infinity" onAction="#goThemes" style="-fx-background-color: #193339;" text="Themes" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect></Button>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect></Button>
 
                 <Button id="storeButton" maxWidth="Infinity" onAction="#goStore" style="-fx-background-color: #193339;" text="Store" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <effect>
-                  <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect></Button>
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.07" specularExponent="6.21" surfaceScale="0.0">
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect></Button>
             </children>
         </VBox>
     </left>
 
     <top>
-        <AnchorPane prefHeight="64.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="64.0" style="-fx-background-color: #193339;" BorderPane.alignment="CENTER">
             <children>
-                <Rectangle arcHeight="5.0" fill="#193339" height="64.0" stroke="#47343400" strokeType="INSIDE" width="1440.0" />
+
                 <Label id="screenLabel" fx:id="headerLabel" layoutX="272.0" layoutY="20.0" style="-fx-font-size: 20; -fx-font-weight: bold;" textFill="WHITE" />
             </children>
         </AnchorPane>
