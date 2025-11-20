@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="504.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.ThemesController">
+   <children>
+      <Button fx:id="redThemeButton" alignment="BOTTOM_LEFT" disable="true" layoutX="26.0" layoutY="30.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="380.0" stylesheets="@themes.css" text="Button" />
+      <Button fx:id="greenThemeButton" alignment="BOTTOM_LEFT" layoutX="26.0" layoutY="96.0" mnemonicParsing="false" onAction="#greenThemePressed" prefHeight="50.0" prefWidth="380.0" stylesheets="@themes.css" text="Green" />
+      <Button fx:id="defaultThemeButton" alignment="BOTTOM_LEFT" layoutX="26.0" layoutY="167.0" mnemonicParsing="false" onAction="#defaultPressed" prefHeight="50.0" prefWidth="380.0" stylesheets="@themes.css" text="Default" />
+      <Button fx:id="applyTheme" layoutX="32.0" layoutY="418.0" mnemonicParsing="false" onAction="#changeTheme" prefHeight="42.0" prefWidth="130.0" stylesheets="@blue-buttons.css" text="Apply Theme" />
+   </children>
+</AnchorPane>

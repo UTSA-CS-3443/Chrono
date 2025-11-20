@@ -1,0 +1,27 @@
+.red-theme-button{
+    -fx-background-color:
+        linear-gradient(to right, #E14752 0%, #E14752 25%, #C2202C 25%, #C2202C 50%, #9c0c18 50%, #9c0c18 75%, #6F0811 75%, #6F0811 100%);
+}
+.red-theme-button:disabled{
+    -fx-background-color:
+            linear-gradient(to right, #F4A3A8 0%, #F4A3A8 25%, #E68A91 25%, #E68A91 50%, #D4777F 50%, #D4777F 75%, #B54C54 75%, #B54C54 100%);
+}
+
+.green-theme-button{
+    -fx-background-color:
+        linear-gradient(to right, #A8E6A3 0%, #A8E6A3 25%, #4CAF50 25%, #4CAF50 50%, #2E7D32 50%, #2E7D32 75%, #1B4F22 75%, #1B4F22 100%);
+}
+.green-theme-button:disabled{
+    -fx-background-color:
+        linear-gradient(to right, #CFF4CE 0%, #CFF4CE 25%, #81D68F 25%, #81D68F 50%, #4AA160 50%, #4AA160 75%, #2C6539 75%, #2C6539 100%);
+}
+
+.default-theme-button{
+    -fx-background-color:
+            linear-gradient(to right, #f0f0f0 0%, #f0f0f0 25%,  #AFB5C5 25%,  #AFB5C5 50%, #668193 50%, #668193 75%,  #193339 75%,  #193339 100%);
+}
+.default-theme-button:pressed{
+ -fx-border-color: dodgerblue;
+ -fx-border-width: 2px;
+}
+
