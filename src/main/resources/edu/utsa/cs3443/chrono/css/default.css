@@ -144,8 +144,21 @@
 #recentRewards{
     -fx-background-color: #9CA7B9;
     -fx-background-radius: 5
-
 }
+#creatureScreenBackground{
+    -fx-background-color: #f0f0f0;
+}
+
+//Store elements//
+#storeSideBar{
+    -fx-background-color: #AFB5C5;
+}
+#dailyTasks{
+    -fx-background-color:  #8DA0B3;
+    -fx-background-radius: 20;
+}
+
+
 
 
 

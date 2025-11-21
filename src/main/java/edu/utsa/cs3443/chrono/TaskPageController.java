@@ -119,11 +119,9 @@ public class TaskPageController {
             rootBox.setAlignment(Pos.CENTER_LEFT);
             rootBox.setPadding(new Insets(15));
             rootBox.getStyleClass().add("task-card");
-            //rootBox.setStyle("-fx-background-color: #AFB5C5; -fx-background-radius: 10;");
 
             checkBox = new CheckBox();
             checkBox.getStyleClass().add("task-checkbox");
-            //checkBox.setStyle("-fx-font-size: 16px; -fx-color: #668193;");
 
             titleLabel = new Label();
             titleLabel.setFont(Font.font("System", FontWeight.BOLD, 16));
