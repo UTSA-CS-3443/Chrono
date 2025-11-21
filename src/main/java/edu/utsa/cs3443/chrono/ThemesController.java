@@ -17,6 +17,9 @@ public class ThemesController {
     private Button greenThemeButton;
 
     @FXML
+    private Button darkThemeButton;
+
+    @FXML
     private String selectedTheme;
     private String activeTheme;
     private String priorTheme;
@@ -44,6 +47,10 @@ public class ThemesController {
     void defaultPressed(ActionEvent event) {
         selectedTheme = "default.css";
     }
+    @FXML
+    void darkThemePressed(ActionEvent event) {
+        selectedTheme = "dark.css";
+    }
 
     void changeTheme(String newCSS,String oldCSS){
         ChronoApplication.sceneReference.getStylesheets().remove(ChronoApplication.class.getResource("css/" + oldCSS).toExternalForm());
@@ -62,6 +69,9 @@ public class ThemesController {
         redThemeButton.getStyleClass().add("red-theme-button");
         defaultThemeButton.getStyleClass().add("default-theme-button");
         greenThemeButton.getStyleClass().add("green-theme-button");
+        darkThemeButton.getStyleClass().add("dark-theme-button");
+
+        //put all buttons into an array list and sort through it to check which are disabled and unlocked them accordingly
 
         if(redThemeButton.isDisabled()){
             redThemeButton.setText("LOCKED");

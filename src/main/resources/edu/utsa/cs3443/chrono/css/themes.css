@@ -20,8 +20,14 @@
     -fx-background-color:
             linear-gradient(to right, #f0f0f0 0%, #f0f0f0 25%,  #AFB5C5 25%,  #AFB5C5 50%, #668193 50%, #668193 75%,  #193339 75%,  #193339 100%);
 }
+.default-theme-button:hover{
+    -fx-background-color:linear-gradient(to right, #d9d9d9 0%,  #d9d9d9 25%,  #8c98a8 25%,  #8c98a8 50%,  #4f5f6d 50%,  #4f5f6d 75%,  #132a33 75%,  #132a33 100% );
+}
 .default-theme-button:pressed{
- -fx-border-color: dodgerblue;
- -fx-border-width: 2px;
+    -fx-background-color:linear-gradient(to right, #b3b3b3 0%, #b3b3b3 25%, #6f7585 25%, #6f7585 50%, #3e4a56 50%, #3e4a56 75%, #0f2025 75%, #0f2025 100%);
+}
+
+.dark-theme-button{
+    -fx-background-color:linear-gradient(to right, #A4A2A6 0%, #A4A2A6 25%, #7D7880 25%, #7D7880 50%, #353336 50%, #353336 75%, #0A0117 75%, #0A0117 100%);
 }
 

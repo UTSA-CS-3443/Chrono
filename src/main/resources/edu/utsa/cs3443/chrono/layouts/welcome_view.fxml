@@ -10,7 +10,7 @@
    <children>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" layoutX="400.0" layoutY="269.0" text="Welcome Back to Chrono">
+            <Label id="welcomeText" alignment="CENTER" layoutX="400.0" layoutY="269.0" text="Welcome Back to Chrono">
                <font>
                   <Font name="Inter 18pt ExtraBold" size="32.0" />
                </font>
@@ -18,7 +18,7 @@
                   <Point3D x="1.0" y="1.0" z="1.0" />
                </rotationAxis>
             </Label>
-            <Label alignment="CENTER" layoutX="446.0" layoutY="308.0" opacity="0.6" text="Stay on track by adding your first task">
+            <Label id="welcomeSubText" alignment="CENTER" layoutX="446.0" layoutY="308.0" opacity="0.6" text="Stay on track by adding your first task">
                <font>
                   <Font name="Inter 18pt Regular" size="16.0" />
                </font>

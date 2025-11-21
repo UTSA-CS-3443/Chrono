@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="504.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.ThemesController">
+<AnchorPane prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.utsa.cs3443.chrono.ThemesController">
    <children>
-      <Button fx:id="redThemeButton" alignment="BOTTOM_LEFT" disable="true" layoutX="26.0" layoutY="30.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="380.0" stylesheets="@../css/themes.css" text="Button" />
-      <Button fx:id="greenThemeButton" alignment="BOTTOM_LEFT" layoutX="26.0" layoutY="96.0" mnemonicParsing="false" onAction="#greenThemePressed" prefHeight="50.0" prefWidth="380.0" stylesheets="@../css/themes.css" text="Green" />
-      <Button fx:id="defaultThemeButton" alignment="BOTTOM_LEFT" layoutX="26.0" layoutY="167.0" mnemonicParsing="false" onAction="#defaultPressed" prefHeight="50.0" prefWidth="380.0" stylesheets="@../css/themes.css" text="Default" />
-      <Button fx:id="applyTheme" layoutX="32.0" layoutY="418.0" mnemonicParsing="false" onAction="#applyTheme" prefHeight="42.0" prefWidth="130.0" text="Apply Theme" />
+      <Button fx:id="applyTheme" layoutX="12.0" layoutY="624.0" mnemonicParsing="false" onAction="#applyTheme" prefHeight="45.0" prefWidth="200.0" text="Apply Theme" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" />
+      <HBox prefHeight="456.0" prefWidth="872.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="500.0" prefWidth="600.0" spacing="30.0">
+               <children>
+                  <Button fx:id="defaultThemeButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#defaultPressed" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Default" />
+                  <Button fx:id="greenThemeButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#greenThemePressed" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Green" />
+                  <Button fx:id="redThemeButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+                  <Button fx:id="darkThemeButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#darkThemePressed" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Dark" />
+                  <Button fx:id="redThemeButton2" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+                  <Button fx:id="redThemeButton3" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+                  <Button fx:id="redThemeButton5" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="500.0" prefWidth="600.0" spacing="30.0">
+               <children>
+                  <Button fx:id="redThemeButton4" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+                  <Button fx:id="redThemeButton6" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+                  <Button fx:id="redThemeButton7" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+                  <Button fx:id="redThemeButton8" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+                  <Button fx:id="redThemeButton9" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+                  <Button fx:id="redThemeButton10" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+                  <Button fx:id="redThemeButton11" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="50.0" prefWidth="600.0" stylesheets="@../css/themes.css" text="Red" />
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

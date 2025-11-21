@@ -50,7 +50,7 @@
 
         <!-- Health -->
         <VBox spacing="5.0">
-            <Label text="Health" textFill="#333333">
+            <Label id="labelText" text="Health" textFill="#333333">
                 <font><Font name="System Bold" size="12.0" /></font>
             </Label>
             <ProgressBar fx:id="healthBar" maxWidth="Infinity" prefHeight="20.0" progress="0.7" />
@@ -58,7 +58,7 @@
 
         <!-- Happiness -->
         <VBox spacing="5.0">
-            <Label text="Happiness" textFill="#333333">
+            <Label id="labelText" text="Happiness" textFill="#333333">
                 <font><Font name="System Bold" size="12.0" /></font>
             </Label>
             <ProgressBar fx:id="happinessBar" maxWidth="Infinity" prefHeight="20.0" progress="0.5" />
@@ -66,7 +66,7 @@
 
         <!-- Coins -->
         <VBox spacing="5.0">
-            <Label text="Coins" textFill="#333333">
+            <Label id="labelText" text="Coins" textFill="#333333">
                 <font><Font name="System Bold" size="12.0" /></font>
             </Label>
             <ProgressBar fx:id="coinsBar" maxWidth="Infinity" prefHeight="20.0" progress="0.3" />
@@ -74,7 +74,7 @@
 
         <!-- Recent Rewards Section -->
         <VBox spacing="10.0" VBox.vgrow="ALWAYS">
-            <Label text="Recent Rewards">
+            <Label id="labelText" text="Recent Rewards">
                 <font><Font name="System Bold" size="16.0" /></font>
                 <VBox.margin><Insets top="20.0" /></VBox.margin>
             </Label>
