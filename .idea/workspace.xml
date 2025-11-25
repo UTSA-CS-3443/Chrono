@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="updated themes">
+    <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="updated theme screen, integrated dark and green themes">
+      <change afterPath="$PROJECT_DIR$/data/themes.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/Theme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/Unlockable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/UnlockableManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/pink.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/red.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/s.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TaskPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TaskPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ThemesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ThemesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/default.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/green.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/green.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/checklist_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/checklist_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/themes_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/themes_view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +239,55 @@
       <option name="project" value="LOCAL" />
       <updated>1763627998913</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="checklist now works with themes">
+      <option name="closed" value="true" />
+      <created>1763675706272</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1763675706272</updated>
+    </task>
+    <task id="LOCAL-00016" summary="creature screen now works with themes">
+      <option name="closed" value="true" />
+      <created>1763676498631</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1763676498631</updated>
+    </task>
+    <task id="LOCAL-00017" summary="all screen are now functional with theme switching, green theme and default are only two complete at the moment. Updated views as well and TaskPageController so elements on screen will be affected by theme switch">
+      <option name="closed" value="true" />
+      <created>1763686887308</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1763686887308</updated>
+    </task>
+    <task id="LOCAL-00018" summary="dark mode">
+      <option name="closed" value="true" />
+      <created>1763703956127</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1763703956127</updated>
+    </task>
+    <task id="LOCAL-00019" summary="blank css sheet for creating more themes">
+      <option name="closed" value="true" />
+      <created>1763704041802</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1763704041802</updated>
+    </task>
+    <task id="LOCAL-00020" summary="updated theme screen, integrated dark and green themes">
+      <option name="closed" value="true" />
+      <created>1763737270497</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1763737270497</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +317,24 @@
     <MESSAGE value="green theme hard coded" />
     <MESSAGE value="themes working better" />
     <MESSAGE value="updated themes" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated themes" />
+    <MESSAGE value="checklist now works with themes" />
+    <MESSAGE value="creature screen now works with themes" />
+    <MESSAGE value="all screen are now functional with theme switching, green theme and default are only two complete at the moment. Updated views as well and TaskPageController so elements on screen will be affected by theme switch" />
+    <MESSAGE value="dark mode" />
+    <MESSAGE value="blank css sheet for creating more themes" />
+    <MESSAGE value="updated theme screen, integrated dark and green themes" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated theme screen, integrated dark and green themes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ChronoApplication.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

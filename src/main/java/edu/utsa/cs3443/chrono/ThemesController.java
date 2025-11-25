@@ -1,23 +1,19 @@
 package edu.utsa.cs3443.chrono;
 
+import edu.utsa.cs3443.chrono.models.Theme;
+import edu.utsa.cs3443.chrono.models.UnlockableManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.FlowPane;
+
+import java.util.ArrayList;
 
 
 public class ThemesController {
 
     @FXML
-    private Button redThemeButton;
-
-    @FXML
-    private Button defaultThemeButton;
-
-    @FXML
-    private Button greenThemeButton;
-
-    @FXML
-    private Button darkThemeButton;
+    private FlowPane themeButtonBox;
 
     @FXML
     private String selectedTheme;
@@ -25,24 +21,49 @@ public class ThemesController {
     private String priorTheme;
 
     private mainUI_Controller mc;
+    private UnlockableManager um;
+    private ArrayList<Theme> themeList;
 
     public void setMainController(mainUI_Controller controller) {
         this.mc = controller;
     }
 
 
+
     @FXML
     public void initialize(){
-        loadThemeButtons();
+        System.out.println(themeList);
+        um = new UnlockableManager();
+        themeList = um.getThemeList();
+        createButtons();
         selectedTheme = "default.css";
         priorTheme = "default.css";
     }
 
     @FXML
+   public void createButtons(){
+
+        for(Theme theme : themeList) {
+            Button button = new Button(theme.getName());
+            button.getStyleClass().add(theme.getButtonTheme());
+
+            button.setPrefWidth(550);
+            button.setPrefHeight(50);
+
+
+            button.setOnAction(e->{
+                selectedTheme = theme.getThemeCSS();
+                System.out.println("selected: " + theme.getName());
+            });
+
+            themeButtonBox.getChildren().add(button);
+        }
+   }
+
+    @FXML
     void greenThemePressed(ActionEvent event) {
         selectedTheme = "green.css";
     }
-
     @FXML
     void defaultPressed(ActionEvent event) {
         selectedTheme = "default.css";
@@ -59,29 +80,9 @@ public class ThemesController {
 
     @FXML
     void applyTheme(ActionEvent event) {
-        System.out.println(priorTheme);
         changeTheme(selectedTheme,priorTheme);
         activeTheme = selectedTheme;
         priorTheme = activeTheme;
-    }
-
-    void loadThemeButtons(){
-        redThemeButton.getStyleClass().add("red-theme-button");
-        defaultThemeButton.getStyleClass().add("default-theme-button");
-        greenThemeButton.getStyleClass().add("green-theme-button");
-        darkThemeButton.getStyleClass().add("dark-theme-button");
-
-        //put all buttons into an array list and sort through it to check which are disabled and unlocked them accordingly
-
-        if(redThemeButton.isDisabled()){
-            redThemeButton.setText("LOCKED");
-        }
-
-        if(greenThemeButton.isDisabled()){
-            greenThemeButton.setText("LOCKED");
-        }
-
-
     }
 
 }

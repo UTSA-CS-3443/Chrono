@@ -1,0 +1,168 @@
+.root {
+    -fx-background-color: #f8d7d7; /* Nearly white red background */
+}
+
+/* Text */
+.label {
+    -fx-text-fill: #3e1f1f; /* Dark red text for contrast */
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #f1a7a7; /* Light red button background */
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: #e68a8a; /* Slightly darker red on hover */
+}
+.button:pressed {
+    -fx-background-color: #d77d7d; /* Even darker red when pressed */
+}
+
+/* Timer Rectangle */
+#timerRectangle {
+    -fx-fill: #e68a8a; /* Light red for timer background */
+}
+
+/* Ghost Buttons */
+#timerButtons > .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f1a7a7; /* Light red text for ghost buttons */
+    -fx-background-radius: 8;
+    -fx-border-color: #f1a7a7; /* Light red border */
+    -fx-border-radius: 8;
+    -fx-border-width: 2px;
+}
+#timerButtons > .button:hover {
+    -fx-background-color: #e68a8a; /* Light red on hover */
+}
+#timerButtons > .button:pressed {
+    -fx-background-color: #f8d7d7; /* Nearly white red when pressed */
+}
+
+/* List View */
+.list-view {
+    -fx-background-color: #f8d7d7; /* Soft red background for list */
+    -fx-padding: 10px;
+    -fx-spacing: 10px;
+}
+
+.list-cell {
+    -fx-padding: 25px;
+    -fx-background-insets: 5, 0 0 10 0;
+    -fx-background-color: #f1a7a7; /* Light red background for list items */
+    -fx-background-radius: 12px;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+.list-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.list-cell:empty:hover {
+    -fx-background-color: transparent;
+}
+
+.list-cell:hover {
+    -fx-background-color: #e68a8a; /* Slightly darker red on hover */
+}
+
+.list-cell:selected {
+    -fx-background-color: #d77d7d; /* Darker red when selected */
+    -fx-text-fill: white;
+}
+
+/* Main UI */
+#sideBar {
+    -fx-background-color: #f1a7a7; /* Light red sidebar */
+}
+
+#sideBar > .button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+}
+#sideBar > .button:hover {
+    -fx-background-color: #e68a8a; /* Slightly darker red on hover */
+    -fx-background-radius: 0px;
+}
+
+#header {
+    -fx-background-color: #f8d7d7; /* Nearly white red background for header */
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #f1a7a7; /* Light red background for text fields */
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #3e1f1f; /* Dark red prompt text */
+}
+
+/* Checklist Elements */
+.task-card {
+    -fx-background-color: #d77d7d; /* Medium red background for task cards */
+    -fx-background-radius: 10;
+}
+.task-checkbox {
+    -fx-color: #f1a7a7; /* Light red checkbox color */
+    -fx-font-size: 16px;
+}
+#checklistView {
+    -fx-background-color: #f8d7d7; /* Soft red background for checklist */
+}
+
+#checklistBackground {
+    -fx-background-color: #f8d7d7; /* Soft red background for checklist */
+}
+
+#taskSideBar {
+    -fx-background-color: #f1a7a7; /* Light red task sidebar */
+}
+
+#taskDetails {
+    -fx-border-color: #f1a7a7; /* Light red border for task details */
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-padding: 5;
+}
+#taskDetails > .text-area {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: #f1a7a7; /* Light red inner background */
+    -fx-text-box-border: transparent;
+}
+
+/* Creature Screen */
+#creatureBackground {
+    -fx-background-color: #f8d7d7; /* Soft red background for creature screen */
+    -fx-background-radius: 20;
+    -fx-max-width: 600;
+    -fx-max-height: 400;
+}
+#creatureSideBar {
+    -fx-background-color: #f1a7a7; /* Light red sidebar */
+}
+
+.progress-bar {
+    -fx-accent: #f1a7a7; /* Light red accent for progress bar */
+    -fx-control-inner-background: #f8d7d7; /* Nearly white red inner background */
+}
+
+#recentRewards {
+    -fx-background-color: #f8d7d7; /* Soft red background for rewards */
+    -fx-background-radius: 5;
+}
+
+#creatureScreenBackground {
+    -fx-background-color: #f8d7d7; /* Soft red background for creature screen */
+}
+
+/* Store elements */
+#storeSideBar {
+    -fx-background-color: #f1a7a7; /* Light red store sidebar */
+}
+#dailyTasks {
+    -fx-background-color: #d77d7d; /* Medium red background for daily tasks */
+    -fx-background-radius: 20;
+}

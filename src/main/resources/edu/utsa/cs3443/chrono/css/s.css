@@ -1,49 +1,49 @@
-// text //
-.label{
-    -fx-text-fill: #F2EFED;
-}
-
 // background //
 .root{
-    -fx-background-color: #38383B;
+    -fx-background-color: #FFFFFF;
+}
+
+// text //
+.label{
+    -fx-text-fill: #0E1439;
 }
 
 // Buttons //
 .button{
-    -fx-background-color: #7D7880;
+    -fx-background-color: #206083;
     -fx-text-fill: white;
     -fx-background-radius: 12;
     -fx-cursor:hand;
 }
 .button:hover{
-    -fx-background-color: #9a989c;
+    -fx-background-color: #1d5a7a;
 }
 .button:pressed{
-    -fx-background-color: #A4A2A6;
+    -fx-background-color: #1a506e;
 }
 #timerRectangle{
-    -fx-fill: #282729;
+    -fx-fill: #DADEF6;
 }
 
 // ghost buttons //
 #timerButtons > .button{
                     -fx-background-color: transparent;
-                    -fx-text-fill: #F2EFED;
+                    -fx-text-fill: #206083;
                     -fx-background-radius: 8;
-                    -fx-border-color: #F2EFED;
+                    -fx-border-color: #206083;
                     -fx-border-radius: 8;
                     -fx-border-width: 2px;
                 }
 #timerButtons > .button:hover{
-                    -fx-background-color: #7D7880;
+                    -fx-background-color: #EDEDED;
                 }
 #timerButtons > .button:pressed{
-                   -fx-background-color: #342E38;
+                   -fx-background-color: #CCCCCC;
                 }
 
 // list view //
 .list-view {
-    -fx-background-color: #282729;
+    -fx-background-color: #DADEF6;
     -fx-padding: 10px;
     -fx-spacing: 10px;
 }
@@ -51,9 +51,9 @@
 .list-cell {
     -fx-padding: 25px;
     -fx-background-insets: 5, 0 0 10 0;
-    -fx-background-color: #7D7880;
+    -fx-background-color: #ffffff;
     -fx-background-radius: 12px;
-    -fx-text-fill: #F2EFED;
+    -fx-text-fill: black;
     -fx-cursor:hand;
 }
 .list-cell:empty{
@@ -65,102 +65,100 @@
 }
 
 .list-cell:hover {
-    -fx-background-color: #9a989c;
+    -fx-background-color: #EDEDED;
 }
 
 .list-cell:selected {
-    -fx-background-color: #A4A2A6 ;
+    -fx-background-color: #CCCCCC;
     -fx-text-fill: white;
 }
 
 //Main UI//
 #sideBar{
-    -fx-background-color: #171717;
+    -fx-background-color: #0E1439 ;
 }
 
 #sideBar > .button{
-    -fx-background-color: transparent;
+    -fx-background-color:  transparent;
     -fx-background-radius: 0px;
 }
 #sideBar > .button:hover{
-    -fx-background-color: #9a989c;
+    -fx-background-color: #206083 ;
     -fx-background-radius: 0px;
 }
 
 #header{
-    -fx-background-color: #171717;
+    -fx-background-color: #0E1439 ;
 }
 
 // Text Fields //
 .text-field{
-    -fx-background-color: #7D7880 ;
+    -fx-background-color:  ;
     -fx-background-radius: 10;
-    -fx-text-fill: #F2EFED;
-    -fx-prompt-text-fill: #F2EFED;
+    -fx-text-fill: ;
+    -fx-prompt-text-fill: ;
 }
 
 // Checklist Elements //
 .task-card{
-    -fx-background-color: #9a989c;
+    -fx-background-color: ;
     -fx-background-radius: 10;
 }
 .task-checkbox{
-    -fx-color: #7D7880;
+    -fx-color: ;
     -fx-font-size: 16px;
 }
 #checklistView{
-    -fx-background-color: #38383B;
+    -fx-background-color: ;
 }
 
 #checklistBackground{
-    -fx-background-color: #38383B;
+    -fx-background-color: ;
 }
 
 #taskSideBar{
-    -fx-background-color: #282729;
+    -fx-background-color: ;
 }
 
 #taskDetails{
-    -fx-border-color: #F2EFED;
+    -fx-border-color: ;
     -fx-border-radius: 10;
     -fx-border-width: 2;
     -fx-padding: 5;
 }
 #taskDetails > .text-area{
     -fx-background-color: transparent;
-    -fx-control-inner-background: #282729;
+    -fx-control-inner-background:  ;
     -fx-text-box-border: transparent;
 }
 
 //Creature Screen//
 #creatureBackground{
-    -fx-background-color: #282729;
+    -fx-background-color: ;
     -fx-background-radius: 20;
     -fx-max-width: 600;
     -fx-max-height: 400;
 }
 #creatureSideBar{
-    -fx-background-color: #282729;
-
+    -fx-background-color: ;
 }
 .progress-bar{
-    -fx-accent: #0A0117;
-    -fx-control-inner-background: #9a989c;
+    -fx-accent: ;
+    -fx-control-inner-background:  ;
 }
 #recentRewards{
-    -fx-background-color: #0E061A;
+    -fx-background-color: ;
     -fx-background-radius: 5
-    -fx-text-fill: white;
 }
 #creatureScreenBackground{
-    -fx-background-color: #38383B;
+    -fx-background-color: ;
 }
 
 //Store elements//
 #storeSideBar{
-    -fx-background-color: #282729;
+    -fx-background-color: ;
 }
 #dailyTasks{
-    -fx-background-color: #0E061A;
+    -fx-background-color:  ;
     -fx-background-radius: 20;
 }
