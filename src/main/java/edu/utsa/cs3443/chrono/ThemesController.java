@@ -15,7 +15,6 @@ public class ThemesController {
     @FXML
     private FlowPane themeButtonBox;
 
-    @FXML
     private String selectedTheme;
     private String activeTheme;
     private String priorTheme;
@@ -28,11 +27,8 @@ public class ThemesController {
         this.mc = controller;
     }
 
-
-
     @FXML
     public void initialize(){
-        System.out.println(themeList);
         um = new UnlockableManager();
         themeList = um.getThemeList();
         createButtons();
@@ -41,36 +37,27 @@ public class ThemesController {
     }
 
     @FXML
-   public void createButtons(){
+    public void createButtons(){
 
         for(Theme theme : themeList) {
             Button button = new Button(theme.getName());
-            button.getStyleClass().add(theme.getButtonTheme());
+            if(theme.isUnlocked()) {
+                button.getStyleClass().add(theme.getButtonTheme());
+            } else{
+                //TODO set style to a locked version in themes.css, add locked version to theme objects
+                button.setText("LOCKED - " + theme.getCost() + " Coins");
+                button.setDisable(true);
+            }
 
-            button.setPrefWidth(550);
+            button.setPrefWidth(585);
             button.setPrefHeight(50);
-
 
             button.setOnAction(e->{
                 selectedTheme = theme.getThemeCSS();
-                System.out.println("selected: " + theme.getName());
             });
 
             themeButtonBox.getChildren().add(button);
         }
-   }
-
-    @FXML
-    void greenThemePressed(ActionEvent event) {
-        selectedTheme = "green.css";
-    }
-    @FXML
-    void defaultPressed(ActionEvent event) {
-        selectedTheme = "default.css";
-    }
-    @FXML
-    void darkThemePressed(ActionEvent event) {
-        selectedTheme = "dark.css";
     }
 
     void changeTheme(String newCSS,String oldCSS){

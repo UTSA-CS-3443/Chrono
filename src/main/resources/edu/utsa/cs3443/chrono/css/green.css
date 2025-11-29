@@ -157,3 +157,10 @@
     -fx-background-color: #7C9987;
     -fx-background-radius: 20;
 }
+.scroll-pane {
+        -fx-background-color: transparent;
+        -fx-border-color: transparent;
+    }
+.scroll-pane > .viewport {
+        -fx-background-color: transparent;
+    }

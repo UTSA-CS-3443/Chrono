@@ -1,8 +1,11 @@
 package edu.utsa.cs3443.chrono;
 
+import edu.utsa.cs3443.chrono.models.Theme;
+import edu.utsa.cs3443.chrono.models.UnlockableManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
@@ -52,6 +55,8 @@ public class store_viewController{
     private StackPane cosmetic2;
     @FXML
     private StackPane cosmetic3;
+    @FXML
+    private FlowPane themeButtonBox;
 
     // These buttons do not do anything when clicked, they are just to show the user what needs to be done
     @FXML
@@ -64,6 +69,8 @@ public class store_viewController{
     public int coins = 0;
 
     private final ArrayList<String> dailyTasks = new ArrayList<String>();
+    private ArrayList<Theme> themeList;
+    private UnlockableManager um;
 
     @FXML
     private void initialize(){
@@ -74,6 +81,33 @@ public class store_viewController{
         //loadUnlocks();
         coins = 200;
         updateCoinCounter();
+        um = new UnlockableManager();
+        themeList = um.getThemeList();
+        createButtons();
+    }
+
+    @FXML
+    public void createButtons(){
+
+        for(Theme theme : themeList) {
+            Button button = new Button(theme.getName());
+            if(theme.isUnlocked()) {
+                button.getStyleClass().add(theme.getButtonTheme());
+            } else{
+                //TODO set style to a locked version in themes.css, add locked version to theme objects
+                button.setText("LOCKED - " + theme.getCost() + " Coins");
+                button.setDisable(true);
+            }
+
+            button.setPrefWidth(300);
+            button.setPrefHeight(50);
+
+            button.setOnAction(e->{
+
+            });
+
+            themeButtonBox.getChildren().add(button);
+        }
     }
 
 

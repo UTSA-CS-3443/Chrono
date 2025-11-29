@@ -25,6 +25,7 @@
     -fx-fill: ;
 }
 
+
 // ghost buttons //
 #timerButtons > .button{
                     -fx-background-color: transparent;
@@ -162,3 +163,10 @@
     -fx-background-color:  ;
     -fx-background-radius: 20;
 }
+.scroll-pane {
+        -fx-background-color: transparent;
+        -fx-border-color: transparent;
+    }
+.scroll-pane > .viewport {
+        -fx-background-color: transparent;
+    }

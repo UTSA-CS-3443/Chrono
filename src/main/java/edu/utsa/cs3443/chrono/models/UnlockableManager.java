@@ -1,6 +1,8 @@
 package edu.utsa.cs3443.chrono.models;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -56,6 +58,34 @@ public class UnlockableManager {
         return new Theme(Integer.parseInt(fields[0]),Boolean.parseBoolean(fields[1]),fields[2],fields[3],fields[4]);
     }
 
+    public void updateThemeUnlock(Theme theme){
+
+        //TODO rewrite whole file with updated value, but organize array list so unlocked themes are always at the top
+        try {
+            theme.setUnlocked(true);
+
+            saveDataToFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String themeToLine(Theme theme){
+        return theme.getCost() + "," + theme.isUnlocked() + "," + theme.getName() + "," + theme.getThemeCSS() + "," + theme.getButtonTheme();
+    }
+
+    public void saveDataToFile() throws IOException {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(themesFileName))) {
+            for (Theme theme : themeList) {
+                bw.write(themeToLine(theme));
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving data to file: " + e.getMessage());
+        }
+    }
+
+
     public ArrayList<Theme> getThemeList() {
         return themeList;
     }
@@ -71,14 +101,4 @@ public class UnlockableManager {
     public void setThemesFileName(String themesFileName) {
         this.themesFileName = themesFileName;
     }
-
-    public void updateThemeUnlock(){
-
-
-
-    }
-
-
-
-
 }
