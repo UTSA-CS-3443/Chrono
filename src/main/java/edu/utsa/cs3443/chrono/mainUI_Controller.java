@@ -3,62 +3,17 @@ package edu.utsa.cs3443.chrono;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import java.io.IOException;
 import javafx.scene.control.Label;
-import javafx.scene.layout.VBox;
-
 
 public class mainUI_Controller {
-
-    @FXML
-    private Button checklistButton;
-
-    @FXML
-    private Button creatureButton;
-
-    @FXML
-    private AnchorPane header;
 
     @FXML
     private Label headerLabel;
 
     @FXML
     private BorderPane layoutPane;
-
-    @FXML
-    private VBox sidebarVbox;
-
-    @FXML
-    private Button storeButton;
-
-    @FXML
-    private Button themesButton;
-
-    @FXML
-    private Button timerButton;
-
-    public Button getChecklistButton() {
-        return checklistButton;
-    }
-
-    public Button getCreatureButton() {
-        return creatureButton;
-    }
-
-    public Button getStoreButton() {
-        return storeButton;
-    }
-
-    public Button getThemesButton() {
-        return themesButton;
-    }
-
-    public Button getTimerButton() {
-        return timerButton;
-    }
 
     @FXML
     private void initialize(){
@@ -127,10 +82,4 @@ public class mainUI_Controller {
 
     }
 
-    public AnchorPane getHeader(){
-        return header;
-    }
-    public VBox getSidebarVbox(){
-        return sidebarVbox;
-    }
 }

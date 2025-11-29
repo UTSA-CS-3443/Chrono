@@ -1,14 +1,18 @@
 package edu.utsa.cs3443.chrono;
 
+import edu.utsa.cs3443.chrono.models.Cosmetic;
 import edu.utsa.cs3443.chrono.models.Theme;
 import edu.utsa.cs3443.chrono.models.UnlockableManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
+import javax.swing.text.Element;
+import javax.swing.text.html.ImageView;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
@@ -21,42 +25,15 @@ import java.util.*;
 
 public class store_viewController{
     public ProgressBar midnightProgress;
-    @FXML
-    public Button cosmetic3Button;
-    @FXML
-    public Button cosmetic2Button;
-    @FXML
-    public Button cosmetic1Button;
-    @FXML
-    public Button orangeThemeButton;
-    @FXML
-    public Button purpleThemeButton;
-    @FXML
-    public Button greenThemeButton;
-    @FXML
-    public Button redThemeButton;
+
     @FXML
     public Label coinCounter;
     @FXML
-    private VBox dailyBackground;
-    @FXML
     private Label timeLabel;
     @FXML
-    private StackPane redTheme;
-    @FXML
-    private StackPane greenTheme;
-    @FXML
-    private StackPane purpleTheme;
-    @FXML
-    private StackPane orangeTheme;
-    @FXML
-    private StackPane cosmetic1;
-    @FXML
-    private StackPane cosmetic2;
-    @FXML
-    private StackPane cosmetic3;
-    @FXML
     private FlowPane themeButtonBox;
+    @FXML
+    private FlowPane cosmeticButtonBox;
 
     // These buttons do not do anything when clicked, they are just to show the user what needs to be done
     @FXML
@@ -70,7 +47,7 @@ public class store_viewController{
 
     private final ArrayList<String> dailyTasks = new ArrayList<String>();
     private ArrayList<Theme> themeList;
-    private UnlockableManager um;
+    private ArrayList<Cosmetic> cosmeticsList;
 
     @FXML
     private void initialize(){
@@ -81,14 +58,15 @@ public class store_viewController{
         //loadUnlocks();
         coins = 200;
         updateCoinCounter();
-        um = new UnlockableManager();
+        UnlockableManager um = new UnlockableManager();
         themeList = um.getThemeList();
-        createButtons();
+        cosmeticsList = um.getCosmeticList();
+        createThemeButtons();
+        createCosmeticButtons();
     }
 
     @FXML
-    public void createButtons(){
-
+    public void createThemeButtons(){
         for(Theme theme : themeList) {
             Button button = new Button(theme.getName());
             if(theme.isUnlocked()) {
@@ -96,17 +74,46 @@ public class store_viewController{
             } else{
                 //TODO set style to a locked version in themes.css, add locked version to theme objects
                 button.setText("LOCKED - " + theme.getCost() + " Coins");
-                button.setDisable(true);
             }
 
             button.setPrefWidth(300);
             button.setPrefHeight(50);
 
             button.setOnAction(e->{
-
+                unlockTheme(theme);
             });
 
             themeButtonBox.getChildren().add(button);
+        }
+    }
+
+    @FXML
+    public void createCosmeticButtons(){
+        for(Cosmetic cosmetic : cosmeticsList) {
+            Button button = new Button(cosmetic.getName());
+
+            if(cosmetic.isUnlocked()) {
+                String imageUrl = getClass().getResource("images/" + cosmetic.getImageFilePath()).toExternalForm();
+
+                button.setStyle(
+                        "-fx-background-image: url('" + imageUrl + "');" +
+                                "-fx-background-size: cover;" +
+                                "-fx-background-position: center;" +
+                                "-fx-background-repeat: no-repeat;"
+                );
+            } else{
+                //TODO set style to a locked version in themes.css, add locked version to theme objects
+                button.setText("LOCKED - " + cosmetic.getCost() + " Coins");
+            }
+
+            button.setPrefWidth(150);
+            button.setPrefHeight(150);
+
+            button.setOnAction(e->{
+                unlockCosmetic(cosmetic);
+            });
+
+            cosmeticButtonBox.getChildren().add(button);
         }
     }
 
@@ -366,43 +373,10 @@ public class store_viewController{
         alert.showAndWait();
     }
 
-    public void buyRed(ActionEvent actionEvent) {
-        if(coins >= 200){
-            redThemeUnlock();
-            coins -= 200;
-            updateCoinCounter();
-        }
-    }
+    private void unlockTheme(Theme theme){
 
-    private void redThemeUnlock(){
-        redTheme.setStyle("-fx-background-color: #9E1C1C");
-        // redTheme.setStyle("-fx-background-radius: 10"); changing the radius to not make it square makes it transparent for some reason
     }
+    private void unlockCosmetic(Cosmetic cosmetic){
 
-    public void buyGreen(ActionEvent actionEvent) {
-        if(coins >= 200){
-            greenThemeUnlock();
-            coins -= 200;
-            updateCoinCounter();
-        }
-    }
-
-    private void greenThemeUnlock(){
-        greenTheme.setStyle("-fx-background-color: #22AA2D");
-    }
-
-    public void buyPurple(ActionEvent actionEvent) {
-    }
-
-    public void buyOrange(ActionEvent actionEvent) {
-    }
-
-    public void buyCosmetic1(ActionEvent actionEvent) {
-    }
-
-    public void buyCosmetic2(ActionEvent actionEvent) {
-    }
-
-    public void buyCosmetic3(ActionEvent actionEvent) {
     }
 }

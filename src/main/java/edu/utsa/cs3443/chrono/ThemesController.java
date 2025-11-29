@@ -49,7 +49,7 @@ public class ThemesController {
                 button.setDisable(true);
             }
 
-            button.setPrefWidth(585);
+            button.setPrefWidth(550);
             button.setPrefHeight(50);
 
             button.setOnAction(e->{

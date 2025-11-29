@@ -11,13 +11,50 @@ public class UnlockableManager {
 
     String themesFileName = "data/themes.csv";
     ArrayList<Theme> themeList;
+    String cosmeticsFileName = "data/cosmetics.csv";
+    ArrayList<Cosmetic> cosmeticList;
 
     public UnlockableManager(){
 
-        themeList = new ArrayList<Theme>();
+        themeList = new ArrayList<>();
         loadThemes();
+        cosmeticList = new ArrayList<>();
+        loadCosmetics();
 
     }
+
+    public void loadCosmetics(){
+        Scanner scanner = null;
+
+        try{
+            String line;
+            Cosmetic cosmetic;
+            scanner = new Scanner(new File(cosmeticsFileName));
+
+            while(scanner.hasNextLine()){
+                line = scanner.nextLine();
+                cosmetic = convertLineToCosmetic(line, ",");
+                if(cosmetic != null){
+                    addCosmetic(cosmetic);
+                }
+            }
+        } catch(IOException e){
+            System.out.println("Error reading file: " + e.getMessage());
+        } finally{
+            scanner.close();
+        }
+    }
+
+    public Cosmetic convertLineToCosmetic(String line, String delimeter){
+        String[] fields = line.split(delimeter);
+
+        if(fields.length != 5){
+            return null;
+        }
+
+        return new Cosmetic(Integer.parseInt(fields[0]),Boolean.parseBoolean(fields[1]),fields[2],Integer.parseInt(fields[3]),fields[4]);
+    }
+
 
     public void loadThemes(){
 
@@ -46,6 +83,9 @@ public class UnlockableManager {
     public void addTheme(Theme theme){
         themeList.add(theme);
     }
+    public void addCosmetic(Cosmetic cosmetic){
+        cosmeticList.add(cosmetic);
+    }
 
     public Theme convertLineToTheme(String line, String delimeter){
 
@@ -63,7 +103,6 @@ public class UnlockableManager {
         //TODO rewrite whole file with updated value, but organize array list so unlocked themes are always at the top
         try {
             theme.setUnlocked(true);
-
             saveDataToFile();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -100,5 +139,21 @@ public class UnlockableManager {
 
     public void setThemesFileName(String themesFileName) {
         this.themesFileName = themesFileName;
+    }
+
+    public String getCosmeticsFileName() {
+        return cosmeticsFileName;
+    }
+
+    public void setCosmeticsFileName(String cosmeticsFileName) {
+        this.cosmeticsFileName = cosmeticsFileName;
+    }
+
+    public ArrayList<Cosmetic> getCosmeticList() {
+        return cosmeticList;
+    }
+
+    public void setCosmeticList(ArrayList<Cosmetic> cosmeticList) {
+        this.cosmeticList = cosmeticList;
     }
 }
