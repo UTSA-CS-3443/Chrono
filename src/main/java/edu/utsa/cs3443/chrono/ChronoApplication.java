@@ -1,12 +1,12 @@
 package edu.utsa.cs3443.chrono;
 
+import edu.utsa.cs3443.chrono.models.UnlockableManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class ChronoApplication extends Application {
     static Stage primaryStageReference;
@@ -20,7 +20,8 @@ public class ChronoApplication extends Application {
         primaryStageReference = primaryStage;
         Scene scene = new Scene(loader.load());
         sceneReference = scene;
-        scene.getStylesheets().add(ChronoApplication.class.getResource("css/default.css").toExternalForm());
+        UnlockableManager um = new UnlockableManager();
+        scene.getStylesheets().add(ChronoApplication.class.getResource("css/" + um.getUserActiveTheme()).toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Chrono");
         primaryStage.setResizable(true);  // optional

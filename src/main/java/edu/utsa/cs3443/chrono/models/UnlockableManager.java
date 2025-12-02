@@ -1,9 +1,6 @@
 package edu.utsa.cs3443.chrono.models;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,17 +10,20 @@ public class UnlockableManager {
     private ArrayList<Theme> themeList;
     private static final String cosmeticsFileName = "data/cosmetics.csv";
     private ArrayList<Cosmetic> cosmeticList;
+    private String userActiveTheme;
 
+
+//TODO maybe a get instance class
     public UnlockableManager(){
 
         themeList = new ArrayList<>();
         loadThemes();
         cosmeticList = new ArrayList<>();
         loadCosmetics();
-
+        userActiveTheme = loadActiveUserTheme();
     }
 
-    public void loadCosmetics(){
+    private void loadCosmetics(){
         Scanner scanner = null;
 
         try{
@@ -45,7 +45,7 @@ public class UnlockableManager {
         }
     }
 
-    public Cosmetic convertLineToCosmetic(String line, String delimeter){
+    private Cosmetic convertLineToCosmetic(String line, String delimeter){
         String[] fields = line.split(delimeter);
 
         if(fields.length != 5){
@@ -56,7 +56,7 @@ public class UnlockableManager {
     }
 
 
-    public void loadThemes(){
+    private void loadThemes(){
 
         Scanner scanner = null;
 
@@ -80,14 +80,14 @@ public class UnlockableManager {
 
     }
 
-    public void addTheme(Theme theme){
+    private void addTheme(Theme theme){
         themeList.add(theme);
     }
-    public void addCosmetic(Cosmetic cosmetic){
+    private void addCosmetic(Cosmetic cosmetic){
         cosmeticList.add(cosmetic);
     }
 
-    public Theme convertLineToTheme(String line, String delimeter){
+    private Theme convertLineToTheme(String line, String delimeter){
 
         String[] fields = line.split(delimeter);
 
@@ -109,11 +109,11 @@ public class UnlockableManager {
         }
     }
 
-    public String themeToLine(Theme theme){
+    private String themeToLine(Theme theme){
         return theme.getCost() + "," + theme.isUnlocked() + "," + theme.getName() + "," + theme.getThemeCSS() + "," + theme.getButtonTheme();
     }
 
-    public void saveDataToFile() throws IOException {
+    private void saveDataToFile() throws IOException {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(themesFileName))) {
             for (Theme theme : themeList) {
                 bw.write(themeToLine(theme));
@@ -122,6 +122,23 @@ public class UnlockableManager {
         } catch (IOException e) {
             System.out.println("Error saving data to file: " + e.getMessage());
         }
+    }
+
+    private void saveUserActiveTheme(){
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("data/userActiveTheme.txt"))){
+            bw.write(userActiveTheme);
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    public String loadActiveUserTheme(){
+        String line;
+        try(BufferedReader br = new BufferedReader(new FileReader("data/userActiveTheme.txt"))){
+            line = br.readLine();
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
+        return line;
     }
 
 
@@ -149,5 +166,14 @@ public class UnlockableManager {
 
     public void setCosmeticList(ArrayList<Cosmetic> cosmeticList) {
         this.cosmeticList = cosmeticList;
+    }
+
+    public String getUserActiveTheme() {
+        return userActiveTheme;
+    }
+
+    public void setUserActiveTheme(String userActiveTheme) {
+        this.userActiveTheme = userActiveTheme;
+        saveUserActiveTheme();
     }
 }

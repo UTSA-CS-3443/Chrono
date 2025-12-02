@@ -76,12 +76,13 @@ public class store_viewController{
                 button.getStyleClass().add(theme.getButtonTheme());
                 button.setText("LOCKED - " + theme.getCost() + " Coins");
 
-
                 button.setPrefWidth(300);
                 button.setPrefHeight(50);
 
                 button.setOnAction(e -> {
-                    unlockTheme(theme);
+                    if(unlockTheme(theme)){
+                        themeButtonBox.getChildren().remove(button);
+                    }
                 });
 
                 themeButtonBox.getChildren().add(button);
@@ -108,16 +109,15 @@ public class store_viewController{
             button.setPrefHeight(150);
 
             button.setOnAction(e->{
-                unlockCosmetic(cosmetic);
+
+                if(unlockCosmetic(cosmetic)){
+                    cosmeticButtonBox.getChildren().remove(button);
+                }
             });
 
             cosmeticButtonBox.getChildren().add(button);
         }
     }
-
-
-
-
 
     // Reads through dailyTasks.csv and stores the tasks in an arraylist
     private void getDailies(){
@@ -305,8 +305,6 @@ public class store_viewController{
         coinCounter.setText("x " + shop.getTotalCoins());
     }
 
-
-    //TODO fix this to show a popup, confirmation work, now error for not enough coins is broken
     private boolean showPurchaseConfirmation(String name, int cost){
         Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
         confirm.setTitle("Confirm Purchase");
@@ -323,20 +321,32 @@ public class store_viewController{
             error.showAndWait();
             return false;
         }
-
         shop.updateTotalCoins(-cost);
         updateCoinCounter();
         return true;
     }
 
-    private void unlockTheme(Theme theme){
+    private boolean unlockTheme(Theme theme){
         if(showPurchaseConfirmation(theme.getName(), theme.getCost())) {
             um.updateThemeUnlock(theme);
+            Alert unlocked = new Alert(Alert.AlertType.INFORMATION);
+            unlocked.setTitle("Theme Unlocked");
+            unlocked.setHeaderText("\"" + theme.getName() + "\" Now Available In Themes Tab");
+            unlocked.showAndWait();
+            return true;
         }
+        return false;
     }
-    private void unlockCosmetic(Cosmetic cosmetic){
-        if(showPurchaseConfirmation(cosmetic.getName(), cosmetic.getCost())){
-            //TODO write um.updateCosmeticUnlock(cosmetic);
-        }
+    private boolean unlockCosmetic(Cosmetic cosmetic){
+            if(showPurchaseConfirmation(cosmetic.getName(), cosmetic.getCost())) {
+                //TODO write um.updateCosmeticUnlock(cosmetic);
+                Alert unlocked = new Alert(Alert.AlertType.INFORMATION);
+                unlocked.setTitle("Cosmetic Unlocked");
+                unlocked.setHeaderText("\"" + cosmetic.getName() + "\" Now Available In Creature Tab");
+                unlocked.showAndWait();
+                return true;
+            }
+            return false;
     }
 }
+

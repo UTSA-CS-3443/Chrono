@@ -75,6 +75,7 @@ public class ThemesController {
         changeTheme(selectedTheme,priorTheme);
         activeTheme = selectedTheme;
         priorTheme = activeTheme;
+        um.setUserActiveTheme(activeTheme);
     }
 
 }
