@@ -95,15 +95,14 @@ public class store_viewController{
         for(Cosmetic cosmetic : cosmeticsList) {
             Button button = new Button(cosmetic.getName());
 
-            if(cosmetic.isUnlocked()) {
-                String imageUrl = getClass().getResource("images/" + cosmetic.getImageFilePath()).toExternalForm();
 
-                button.setStyle(
-                        "-fx-background-image: url('" + imageUrl + "');" + "-fx-background-size: cover;" + "-fx-background-position: center;" + "-fx-background-repeat: no-repeat;"
-                );
-            } else{
-                button.setText("LOCKED - " + cosmetic.getCost() + " Coins");
-            }
+            String imageUrl = getClass().getResource("images/" + cosmetic.getImageFilePath()).toExternalForm();
+
+            button.setStyle(
+                    "-fx-background-image: url('" + imageUrl + "');" + "-fx-background-size: cover;" + "-fx-background-position: center;" + "-fx-background-repeat: no-repeat;"
+            );
+
+            button.setText("LOCKED - " + cosmetic.getCost() + " Coins");
 
             button.setPrefWidth(150);
             button.setPrefHeight(150);
@@ -339,7 +338,7 @@ public class store_viewController{
     }
     private boolean unlockCosmetic(Cosmetic cosmetic){
             if(showPurchaseConfirmation(cosmetic.getName(), cosmetic.getCost())) {
-                //TODO write um.updateCosmeticUnlock(cosmetic);
+                um.updateCosmeticUnlock(cosmetic);
                 Alert unlocked = new Alert(Alert.AlertType.INFORMATION);
                 unlocked.setTitle("Cosmetic Unlocked");
                 unlocked.setHeaderText("\"" + cosmetic.getName() + "\" Now Available In Creature Tab");

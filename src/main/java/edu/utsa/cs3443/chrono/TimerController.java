@@ -1,5 +1,6 @@
 package edu.utsa.cs3443.chrono;
 
+import edu.utsa.cs3443.chrono.models.ShopModel;
 import edu.utsa.cs3443.chrono.models.Task;
 import edu.utsa.cs3443.chrono.models.TaskManager;
 import edu.utsa.cs3443.chrono.models.TimerModel;
@@ -60,6 +61,8 @@ public class TimerController {
     private TimerModel timer;
     private Timeline timeline;
     private Task selectedTask;
+    private TaskManager tm;
+    private ShopModel shop;
 
     @FXML
     public void initialize() {
@@ -72,9 +75,9 @@ public class TimerController {
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> tick()));
         timeline.setCycleCount(Timeline.INDEFINITE);
 
-        TaskManager tm = new TaskManager();
-        //tm.addTask("test 1", 10); Notated out because were creating new tasks every time you visit the page -Collin Schiebel
-        //tm.addTask("test 2", 20);
+        tm = new TaskManager();
+        shop = new ShopModel();
+
         ObservableList<Task> tasks = FXCollections.observableArrayList();
         tasks.addAll(tm.getTasks());
         taskList.setItems(tasks);
@@ -167,6 +170,9 @@ public class TimerController {
 
         //stops timer when seconds, minutes and hours are 0
         if (timer.getTotalSeconds() == 0) {
+            selectedTask.setIsComplete(true);
+            tm.updateTask();
+            shop.updateTotalCoins(50);
             pauseTimer();
         }
     }
@@ -179,7 +185,6 @@ public class TimerController {
         }else if(timer.getTotalSeconds() == 0){
             errorMessageLabel.setText("Please enter an amount of time");
         }else{
-            //idk why this works but it does, makes no sense to me but i dont wanna mess with it
             errorMessageLabel.setText("");
             timeline.stop();
             timeline.playFromStart();

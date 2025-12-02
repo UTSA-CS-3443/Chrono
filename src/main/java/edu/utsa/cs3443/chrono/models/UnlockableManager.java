@@ -23,39 +23,6 @@ public class UnlockableManager {
         userActiveTheme = loadActiveUserTheme();
     }
 
-    private void loadCosmetics(){
-        Scanner scanner = null;
-
-        try{
-            String line;
-            Cosmetic cosmetic;
-            scanner = new Scanner(new File(cosmeticsFileName));
-
-            while(scanner.hasNextLine()){
-                line = scanner.nextLine();
-                cosmetic = convertLineToCosmetic(line, ",");
-                if(cosmetic != null){
-                    addCosmetic(cosmetic);
-                }
-            }
-        } catch(IOException e){
-            System.out.println("Error reading file: " + e.getMessage());
-        } finally{
-            scanner.close();
-        }
-    }
-
-    private Cosmetic convertLineToCosmetic(String line, String delimeter){
-        String[] fields = line.split(delimeter);
-
-        if(fields.length != 5){
-            return null;
-        }
-
-        return new Cosmetic(Integer.parseInt(fields[0]),Boolean.parseBoolean(fields[1]),fields[2],Integer.parseInt(fields[3]),fields[4]);
-    }
-
-
     private void loadThemes(){
 
         Scanner scanner = null;
@@ -80,6 +47,28 @@ public class UnlockableManager {
 
     }
 
+    private void loadCosmetics(){
+        Scanner scanner = null;
+
+        try{
+            String line;
+            Cosmetic cosmetic;
+            scanner = new Scanner(new File(cosmeticsFileName));
+
+            while(scanner.hasNextLine()){
+                line = scanner.nextLine();
+                cosmetic = convertLineToCosmetic(line, ",");
+                if(cosmetic != null){
+                    addCosmetic(cosmetic);
+                }
+            }
+        } catch(IOException e){
+            System.out.println("Error reading file: " + e.getMessage());
+        } finally{
+            scanner.close();
+        }
+    }
+
     private void addTheme(Theme theme){
         themeList.add(theme);
     }
@@ -98,22 +87,17 @@ public class UnlockableManager {
         return new Theme(Integer.parseInt(fields[0]),Boolean.parseBoolean(fields[1]),fields[2],fields[3],fields[4]);
     }
 
-    public void updateThemeUnlock(Theme theme){
+    private Cosmetic convertLineToCosmetic(String line, String delimeter){
+        String[] fields = line.split(delimeter);
 
-        //TODO rewrite whole file with updated value, but organize array list so unlocked themes are always at the top
-        try {
-            theme.setUnlocked(true);
-            saveDataToFile();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if(fields.length != 5){
+            return null;
         }
+
+        return new Cosmetic(Integer.parseInt(fields[0]),Boolean.parseBoolean(fields[1]),fields[2],Integer.parseInt(fields[3]),fields[4]);
     }
 
-    private String themeToLine(Theme theme){
-        return theme.getCost() + "," + theme.isUnlocked() + "," + theme.getName() + "," + theme.getThemeCSS() + "," + theme.getButtonTheme();
-    }
-
-    private void saveDataToFile() throws IOException {
+    private void saveThemeToFile() {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(themesFileName))) {
             for (Theme theme : themeList) {
                 bw.write(themeToLine(theme));
@@ -122,6 +106,35 @@ public class UnlockableManager {
         } catch (IOException e) {
             System.out.println("Error saving data to file: " + e.getMessage());
         }
+    }
+
+    private void saveCosmeticToFile(){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(cosmeticsFileName))) {
+            for (Cosmetic cosmetic : cosmeticList) {
+                bw.write(cosmeticToLine(cosmetic));
+                bw.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving data to file: " + e.getMessage());
+        }
+    }
+
+    private String themeToLine(Theme theme){
+        return theme.getCost() + "," + theme.isUnlocked() + "," + theme.getName() + "," + theme.getThemeCSS() + "," + theme.getButtonTheme();
+    }
+
+    private String cosmeticToLine(Cosmetic cosmetic){
+        return cosmetic.getCost() + "," + cosmetic.isUnlocked() + "," + cosmetic.getName() + "," + cosmetic.getType() + "," + cosmetic.getImageFilePath();
+    }
+
+    public void updateCosmeticUnlock(Cosmetic cosmetic){
+        cosmetic.setUnlocked(true);
+        saveCosmeticToFile();
+    }
+
+    public void updateThemeUnlock(Theme theme){
+        theme.setUnlocked(true);
+        saveThemeToFile();
     }
 
     private void saveUserActiveTheme(){
@@ -140,7 +153,6 @@ public class UnlockableManager {
         }
         return line;
     }
-
 
     public ArrayList<Theme> getThemeList() {
         return themeList;
