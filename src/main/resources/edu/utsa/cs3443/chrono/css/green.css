@@ -164,3 +164,7 @@
 .scroll-pane > .viewport {
         -fx-background-color: transparent;
     }
+//themes screen//
+#themesSideBar{
+    -fx-background-color: #B9C6BE;
+}

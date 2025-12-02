@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class UnlockableManager {
 
-    String themesFileName = "data/themes.csv";
-    ArrayList<Theme> themeList;
-    String cosmeticsFileName = "data/cosmetics.csv";
-    ArrayList<Cosmetic> cosmeticList;
+    private static final String themesFileName = "data/themes.csv";
+    private ArrayList<Theme> themeList;
+    private static final String cosmeticsFileName = "data/cosmetics.csv";
+    private ArrayList<Cosmetic> cosmeticList;
 
     public UnlockableManager(){
 
@@ -137,17 +137,11 @@ public class UnlockableManager {
         return themesFileName;
     }
 
-    public void setThemesFileName(String themesFileName) {
-        this.themesFileName = themesFileName;
-    }
 
     public String getCosmeticsFileName() {
         return cosmeticsFileName;
     }
 
-    public void setCosmeticsFileName(String cosmeticsFileName) {
-        this.cosmeticsFileName = cosmeticsFileName;
-    }
 
     public ArrayList<Cosmetic> getCosmeticList() {
         return cosmeticList;

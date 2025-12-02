@@ -1,6 +1,7 @@
 package edu.utsa.cs3443.chrono;
 
 import edu.utsa.cs3443.chrono.models.Cosmetic;
+import edu.utsa.cs3443.chrono.models.ShopModel;
 import edu.utsa.cs3443.chrono.models.Theme;
 import edu.utsa.cs3443.chrono.models.UnlockableManager;
 import javafx.event.ActionEvent;
@@ -43,22 +44,23 @@ public class store_viewController{
     @FXML
     private Button task3;
 
-    public int coins = 0;
+
 
     private final ArrayList<String> dailyTasks = new ArrayList<String>();
     private ArrayList<Theme> themeList;
     private ArrayList<Cosmetic> cosmeticsList;
+    private UnlockableManager um;
+    private ShopModel shop;
 
     @FXML
     private void initialize(){
+        shop = new ShopModel();
         getDailies();
         loadOrResetDailyProgress();
         MidnightCountdown countdown = new MidnightCountdown(timeLabel, midnightProgress);
         countdown.start();
-        //loadUnlocks();
-        coins = 200;
         updateCoinCounter();
-        UnlockableManager um = new UnlockableManager();
+        um = new UnlockableManager();
         themeList = um.getThemeList();
         cosmeticsList = um.getCosmeticList();
         createThemeButtons();
@@ -68,22 +70,22 @@ public class store_viewController{
     @FXML
     public void createThemeButtons(){
         for(Theme theme : themeList) {
-            Button button = new Button(theme.getName());
-            if(theme.isUnlocked()) {
+            if(!theme.isUnlocked()) {
+                Button button = new Button(theme.getName());
+
                 button.getStyleClass().add(theme.getButtonTheme());
-            } else{
-                //TODO set style to a locked version in themes.css, add locked version to theme objects
                 button.setText("LOCKED - " + theme.getCost() + " Coins");
+
+
+                button.setPrefWidth(300);
+                button.setPrefHeight(50);
+
+                button.setOnAction(e -> {
+                    unlockTheme(theme);
+                });
+
+                themeButtonBox.getChildren().add(button);
             }
-
-            button.setPrefWidth(300);
-            button.setPrefHeight(50);
-
-            button.setOnAction(e->{
-                unlockTheme(theme);
-            });
-
-            themeButtonBox.getChildren().add(button);
         }
     }
 
@@ -96,13 +98,9 @@ public class store_viewController{
                 String imageUrl = getClass().getResource("images/" + cosmetic.getImageFilePath()).toExternalForm();
 
                 button.setStyle(
-                        "-fx-background-image: url('" + imageUrl + "');" +
-                                "-fx-background-size: cover;" +
-                                "-fx-background-position: center;" +
-                                "-fx-background-repeat: no-repeat;"
+                        "-fx-background-image: url('" + imageUrl + "');" + "-fx-background-size: cover;" + "-fx-background-position: center;" + "-fx-background-repeat: no-repeat;"
                 );
             } else{
-                //TODO set style to a locked version in themes.css, add locked version to theme objects
                 button.setText("LOCKED - " + cosmetic.getCost() + " Coins");
             }
 
@@ -118,37 +116,7 @@ public class store_viewController{
     }
 
 
-    private void loadUnlocks(){
-        Path path = Paths.get(unlockFilePath);
 
-        //if file does not exist or is empty, start with 0 coins
-        if(!Files.exists(path)){
-            System.out.println("No save file found, starting with 0 coins.");
-
-        }
-
-        try{
-            String content = Files.readString(path).trim();
-
-            // if file is empty
-            if(content.isEmpty()){
-                System.out.println("File is empty. defaulting to 0 coins");
-
-            }
-
-            int savedCoins = Integer.parseInt(content);
-            System.out.println("Successfully loaded " + savedCoins + " coins.");
-            coins = savedCoins;
-        }catch(IOException e){
-            showErrorAlert("Could not read the save file");
-            e.printStackTrace();
-        }catch(NumberFormatException e){
-            showErrorAlert("Corrupted save data");
-            e.printStackTrace();
-        }
-
-        updateCoinCounter();
-    }
 
 
     // Reads through dailyTasks.csv and stores the tasks in an arraylist
@@ -334,49 +302,41 @@ public class store_viewController{
     }
 
     private void updateCoinCounter(){
-        coinCounter.setText("x " + coins);
-        saveUnlocks();
+        coinCounter.setText("x " + shop.getTotalCoins());
     }
 
 
-    private final String unlockFilePath = "/edu/utsa/cs3443/chrono/files/unlocks.txt";
-    private void saveUnlocks(){
-        Path path = Paths.get(unlockFilePath);
+    //TODO fix this to show a popup, confirmation work, now error for not enough coins is broken
+    private boolean showPurchaseConfirmation(String name, int cost){
+        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION);
+        confirm.setTitle("Confirm Purchase");
+        confirm.setHeaderText("Do you want to purchase \"" + name + "\" for " + cost + " coins?");
+        confirm.showAndWait();
 
-        try{
-            // convert coins to string and write to file
-            String coinsData = String.valueOf(coins);
+        if(confirm.getResult() != ButtonType.OK)
+            return false;
 
-            // create file directories if it cannot find it
-            if(path.getParent() != null){
-                Files.createDirectories(path.getParent());
-            }
-
-            // write coins value and overwrite file
-            Files.writeString(path, coinsData,
-                    StandardOpenOption.CREATE,
-                    StandardOpenOption.WRITE,
-                    StandardOpenOption.TRUNCATE_EXISTING);
-
-            System.out.println("Coins saved successfully: " + coins);
-        }catch(IOException e){
-            showErrorAlert("Failed to save unlocks and coins: could not save to file");
-            e.printStackTrace();
+        if (shop.getTotalCoins() < cost) {
+            Alert error = new Alert(Alert.AlertType.ERROR);
+            error.setTitle("Not Enough Coins");
+            error.setHeaderText("You don't have enough coins!\n\nComplete Tasks To Earn More!");
+            error.showAndWait();
+            return false;
         }
-    }
 
-    private static void showErrorAlert(String content){
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Save Error");
-        alert.setHeaderText("Could not save");
-        alert.setContentText(content);
-        alert.showAndWait();
+        shop.updateTotalCoins(-cost);
+        updateCoinCounter();
+        return true;
     }
 
     private void unlockTheme(Theme theme){
-
+        if(showPurchaseConfirmation(theme.getName(), theme.getCost())) {
+            um.updateThemeUnlock(theme);
+        }
     }
     private void unlockCosmetic(Cosmetic cosmetic){
-
+        if(showPurchaseConfirmation(cosmetic.getName(), cosmetic.getCost())){
+            //TODO write um.updateCosmeticUnlock(cosmetic);
+        }
     }
 }

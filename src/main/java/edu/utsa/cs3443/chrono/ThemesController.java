@@ -5,6 +5,7 @@ import edu.utsa.cs3443.chrono.models.UnlockableManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
 
 import java.util.ArrayList;
@@ -14,6 +15,10 @@ public class ThemesController {
 
     @FXML
     private FlowPane themeButtonBox;
+    @FXML
+    private Label previewBox;
+    @FXML
+    private Label previewTitle;
 
     private String selectedTheme;
     private String activeTheme;
@@ -40,23 +45,23 @@ public class ThemesController {
     public void createButtons(){
 
         for(Theme theme : themeList) {
-            Button button = new Button(theme.getName());
             if(theme.isUnlocked()) {
+                Button button = new Button(theme.getName());
+
                 button.getStyleClass().add(theme.getButtonTheme());
-            } else{
-                //TODO set style to a locked version in themes.css, add locked version to theme objects
-                button.setText("LOCKED - " + theme.getCost() + " Coins");
-                button.setDisable(true);
+
+                button.setPrefWidth(765);
+                button.setPrefHeight(50);
+
+                button.setOnAction(e -> {
+                    selectedTheme = theme.getThemeCSS();
+                    previewBox.getStyleClass().clear();
+                    previewBox.getStyleClass().add(theme.getButtonTheme());
+                    previewTitle.setText(theme.getName());
+                });
+
+                themeButtonBox.getChildren().add(button);
             }
-
-            button.setPrefWidth(550);
-            button.setPrefHeight(50);
-
-            button.setOnAction(e->{
-                selectedTheme = theme.getThemeCSS();
-            });
-
-            themeButtonBox.getChildren().add(button);
         }
     }
 

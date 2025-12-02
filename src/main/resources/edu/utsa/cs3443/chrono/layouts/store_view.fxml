@@ -77,12 +77,12 @@
 
                         <Button fx:id="task1" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10;" text="Create a new task" />
                         <Button fx:id="task2" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10;" text="Feed your creature" />
-                        <VBox spacing="5">
+                          <Button fx:id="task3" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10;" text="Complete 3 tasks" />
+                        <VBox alignment="CENTER" spacing="5">
                             <children>
-                                <Button fx:id="task3" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10;" text="Complete 3 tasks" />
                                 <ProgressBar fx:id="midnightProgress" maxWidth="1.7976931348623157E308" progress="0.2">
                            <VBox.margin>
-                              <Insets top="10.0" />
+                              <Insets bottom="3.0" />
                            </VBox.margin></ProgressBar>
                                 <Label fx:id="timeLabel" style="-fx-font-size: 12;" text="16 hrs 32 mins 49 sec" />
                             </children>
