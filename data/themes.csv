@@ -1,3 +1,8 @@
-200,false,Default,default.css,default-theme-button
+200,true,Default,default.css,default-theme-button
 200,false,Green,green.css,green-theme-button
 200,false,Dark,dark.css,dark-theme-button
+200,true,Red,red.css,a
+200,true,Blank,blank.css,a
+200,true,Pink,pink.css,a
+200,true,S,s.css,a
+200,true,Light,light.css,a
