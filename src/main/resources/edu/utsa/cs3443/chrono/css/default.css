@@ -76,14 +76,19 @@
 #sideBar > .button{
     -fx-background-color:  transparent;
     -fx-background-radius: 0px;
+    -fx-text-fill; white;
 }
 #sideBar > .button:hover{
     -fx-background-color:  #668193;
     -fx-background-radius: 0px;
+    -fx-text-fill; white;
 }
 
 #header{
     -fx-background-color:  #193339;
+}
+#screenLabel{
+    -fx-text-fill: #FFFFFF;
 }
 
 // Text Fields //
@@ -102,6 +107,15 @@
 .task-checkbox{
     -fx-color: #668193;
     -fx-font-size: 16px;
+}
+.task-card.selected{
+    -fx-background-color: #668193;
+}
+.task-title.selected{
+    -fx-text-fill: #FFFFFF;
+}
+.date-label.selected{
+    -fx-text-fill: #FFFFFF;
 }
 #checklistView{
     -fx-background-color: #f0f0f0;

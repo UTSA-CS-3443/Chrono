@@ -69,8 +69,8 @@
 }
 
 .list-cell:selected {
-    -fx-background-color: #CCCCCC;
-    -fx-text-fill: white;
+    -fx-background-color: #C4C8DD;
+    -fx-text-fill: #0E1439;
 }
 
 //Main UI//
@@ -79,16 +79,21 @@
 }
 
 #sideBar > .button{
-    -fx-background-color:  transparent;
+    -fx-background-color: transparent;
     -fx-background-radius: 0px;
+    -fx-text-fill; white;
 }
 #sideBar > .button:hover{
     -fx-background-color: #206083 ;
     -fx-background-radius: 0px;
+    -fx-text-fill; white;
 }
 
 #header{
     -fx-background-color: #0E1439 ;
+}
+#screenLabel{
+    -fx-text-fill: #FFFFFF;
 }
 
 // Text Fields //
@@ -101,64 +106,85 @@
 
 // Checklist Elements //
 .task-card{
-    -fx-background-color: ;
+    -fx-background-color: #DADEF6;
     -fx-background-radius: 10;
 }
+.task-card.selected{
+    -fx-background-color: #206083;
+}
+.task-title.selected{
+    -fx-text-fill: #FFFFFF;
+}
+.date-label.selected{
+    -fx-text-fill: #FFFFFF;
+}
 .task-checkbox{
-    -fx-color: ;
+    -fx-color: #206083;
     -fx-font-size: 16px;
 }
 #checklistView{
-    -fx-background-color: ;
+    -fx-background-color: #FFFFFF;
 }
 
 #checklistBackground{
-    -fx-background-color: ;
+    -fx-background-color: #FFFFFF;
 }
 
 #taskSideBar{
-    -fx-background-color: ;
+    -fx-background-color: #DADEF6;
 }
 
 #taskDetails{
-    -fx-border-color: ;
+    -fx-border-color: #FFFFFF;
     -fx-border-radius: 10;
     -fx-border-width: 2;
     -fx-padding: 5;
 }
 #taskDetails > .text-area{
     -fx-background-color: transparent;
-    -fx-control-inner-background:  ;
+    -fx-control-inner-background: #DADEF6;
     -fx-text-box-border: transparent;
 }
 
 //Creature Screen//
 #creatureBackground{
-    -fx-background-color: ;
+    -fx-background-color: #DADEF6;
     -fx-background-radius: 20;
     -fx-max-width: 600;
     -fx-max-height: 400;
 }
 #creatureSideBar{
-    -fx-background-color: ;
+    -fx-background-color: #DADEF6;
 }
 .progress-bar{
-    -fx-accent: ;
-    -fx-control-inner-background:  ;
+    -fx-accent: #206083;
+    -fx-control-inner-background: #FFFFFF;
 }
 #recentRewards{
-    -fx-background-color: ;
+    -fx-background-color: #C4C8DD;
     -fx-background-radius: 5
 }
 #creatureScreenBackground{
-    -fx-background-color: ;
+    -fx-background-color: #FFFFFF;
 }
 
 //Store elements//
 #storeSideBar{
-    -fx-background-color: ;
+    -fx-background-color: #DADEF6;
 }
 #dailyTasks{
-    -fx-background-color:  ;
+    -fx-background-color: #C4C8DD ;
     -fx-background-radius: 20;
+}
+.scroll-pane {
+        -fx-background-color: transparent;
+        -fx-border-color: transparent;
+    }
+.scroll-pane > .viewport {
+        -fx-background-color: transparent;
+    }
+
+//themes screen//
+#themesSideBar{
+    -fx-background-color: #DADEF6;
 }

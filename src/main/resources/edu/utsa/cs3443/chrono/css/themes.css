@@ -30,4 +30,12 @@
 .dark-theme-button{
     -fx-background-color:linear-gradient(to right, #A4A2A6 0%, #A4A2A6 25%, #7D7880 25%, #7D7880 50%, #353336 50%, #353336 75%, #0A0117 75%, #0A0117 100%);
 }
-
+.pink-theme-button{
+    -fx-background-color:linear-gradient(to right, #f8d7d7 0%, #f8d7d7 25%, #f2c8c8 25%, #f2c8c8 50%, #f1a7a7 50%, #f1a7a7 75%, #b95e5e 75%, #b95e5e 100%);
+}
+.blue-theme-button{
+    -fx-background-color:linear-gradient(to right, #F0F0F0 0%, #F0F0F0 25%, #DADEF6 25%, #DADEF6 50%, #206083 50%, #206083 75%, #0E1439 75%, #0E1439 100%);
+}
+.light-theme-button{
+    -fx-background-color:linear-gradient(to right, #FFFFFF 0%, #FFFFFF 25%, #E7E7E4 25%, #E7E7E4 50%, #E4E3E2 50%, #E4E3E2 75%, #DDDCDA 75%, #DDDCDA 100%);
+}

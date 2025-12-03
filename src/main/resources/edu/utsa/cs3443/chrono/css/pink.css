@@ -1,50 +1,50 @@
 .root {
-    -fx-background-color: #f8d7d7; /* Nearly white red background */
+    -fx-background-color: #f8d7d7;
 }
 
 /* Text */
 .label {
-    -fx-text-fill: #3e1f1f; /* Dark red text for contrast */
+    -fx-text-fill: #3e1f1f;
 }
 
 /* Buttons */
 .button {
-    -fx-background-color: #f1a7a7; /* Light red button background */
+    -fx-background-color: #f1a7a7;
     -fx-text-fill: white;
     -fx-background-radius: 12;
     -fx-cursor: hand;
 }
 .button:hover {
-    -fx-background-color: #e68a8a; /* Slightly darker red on hover */
+    -fx-background-color: #e68a8a;
 }
 .button:pressed {
-    -fx-background-color: #d77d7d; /* Even darker red when pressed */
+    -fx-background-color: #d77d7d;
 }
 
 /* Timer Rectangle */
 #timerRectangle {
-    -fx-fill: #e68a8a; /* Light red for timer background */
+    -fx-fill: #f2c8c8;
 }
 
 /* Ghost Buttons */
 #timerButtons > .button {
     -fx-background-color: transparent;
-    -fx-text-fill: #f1a7a7; /* Light red text for ghost buttons */
+    -fx-text-fill: #f1a7a7;
     -fx-background-radius: 8;
-    -fx-border-color: #f1a7a7; /* Light red border */
+    -fx-border-color: #f1a7a7;
     -fx-border-radius: 8;
     -fx-border-width: 2px;
 }
 #timerButtons > .button:hover {
-    -fx-background-color: #e68a8a; /* Light red on hover */
+    -fx-background-color: #e68a8a;
 }
 #timerButtons > .button:pressed {
-    -fx-background-color: #f8d7d7; /* Nearly white red when pressed */
+    -fx-background-color: #f8d7d7;
 }
 
 /* List View */
 .list-view {
-    -fx-background-color: #f8d7d7; /* Soft red background for list */
+    -fx-background-color: #f2c8c8; /* Soft red background for list */
     -fx-padding: 10px;
     -fx-spacing: 10px;
 }
@@ -76,93 +76,119 @@
 
 /* Main UI */
 #sideBar {
-    -fx-background-color: #f1a7a7; /* Light red sidebar */
+    -fx-background-color: #f1a7a7;
 }
 
 #sideBar > .button {
     -fx-background-color: transparent;
     -fx-background-radius: 0px;
+    -fx-text-fill; white;
 }
 #sideBar > .button:hover {
-    -fx-background-color: #e68a8a; /* Slightly darker red on hover */
+    -fx-background-color: #e68a8a;
     -fx-background-radius: 0px;
+    -fx-text-fill; white;
 }
 
 #header {
-    -fx-background-color: #f8d7d7; /* Nearly white red background for header */
+    -fx-background-color: #f1a7a7;
+}
+#screenLabel{
+    -fx-text-fill: #FFFFFF;
 }
 
 /* Text Fields */
 .text-field {
-    -fx-background-color: #f1a7a7; /* Light red background for text fields */
+    -fx-background-color: #f1a7a7;
     -fx-background-radius: 10;
     -fx-text-fill: white;
-    -fx-prompt-text-fill: #3e1f1f; /* Dark red prompt text */
+    -fx-prompt-text-fill: #3e1f1f;
 }
 
 /* Checklist Elements */
 .task-card {
-    -fx-background-color: #d77d7d; /* Medium red background for task cards */
+    -fx-background-color: #d77d7d;
     -fx-background-radius: 10;
 }
 .task-checkbox {
-    -fx-color: #f1a7a7; /* Light red checkbox color */
+    -fx-color: #f1a7a7;
     -fx-font-size: 16px;
 }
+.task-card.selected{
+    -fx-background-color: #f1a7a7;
+}
+.task-title.selected{
+    -fx-text-fill: #FFFFFF;
+}
+.date-label.selected{
+    -fx-text-fill: #FFFFFF;
+}
 #checklistView {
-    -fx-background-color: #f8d7d7; /* Soft red background for checklist */
+    -fx-background-color: #f8d7d7;
 }
 
 #checklistBackground {
-    -fx-background-color: #f8d7d7; /* Soft red background for checklist */
+    -fx-background-color: #f8d7d7;
 }
 
 #taskSideBar {
-    -fx-background-color: #f1a7a7; /* Light red task sidebar */
+    -fx-background-color: #f2c8c8;
 }
 
 #taskDetails {
-    -fx-border-color: #f1a7a7; /* Light red border for task details */
+    -fx-border-color: #f1a7a7;
     -fx-border-radius: 10;
     -fx-border-width: 2;
     -fx-padding: 5;
 }
 #taskDetails > .text-area {
     -fx-background-color: transparent;
-    -fx-control-inner-background: #f1a7a7; /* Light red inner background */
+    -fx-control-inner-background: #f2c8c8;
     -fx-text-box-border: transparent;
 }
 
 /* Creature Screen */
 #creatureBackground {
-    -fx-background-color: #f8d7d7; /* Soft red background for creature screen */
+    -fx-background-color: #f2c8c8;
     -fx-background-radius: 20;
     -fx-max-width: 600;
     -fx-max-height: 400;
 }
 #creatureSideBar {
-    -fx-background-color: #f1a7a7; /* Light red sidebar */
+    -fx-background-color: #f2c8c8;
 }
 
 .progress-bar {
-    -fx-accent: #f1a7a7; /* Light red accent for progress bar */
-    -fx-control-inner-background: #f8d7d7; /* Nearly white red inner background */
+    -fx-accent: #f1a7a7;
+    -fx-control-inner-background: #f8d7d7;
 }
 
 #recentRewards {
-    -fx-background-color: #f8d7d7; /* Soft red background for rewards */
+    -fx-background-color: #f8d7d7;
     -fx-background-radius: 5;
 }
 
 #creatureScreenBackground {
-    -fx-background-color: #f8d7d7; /* Soft red background for creature screen */
+    -fx-background-color: #f8d7d7;
 }
 
 /* Store elements */
 #storeSideBar {
-    -fx-background-color: #f1a7a7; /* Light red store sidebar */
+    -fx-background-color: #f2c8c8;
 }
 #dailyTasks {
-    -fx-background-color: #d77d7d; /* Medium red background for daily tasks */
+    -fx-background-color: #d77d7d;
     -fx-background-radius: 20;
+}
+.scroll-pane {
+        -fx-background-color: transparent;
+        -fx-border-color: transparent;
+    }
+.scroll-pane > .viewport {
+        -fx-background-color: transparent;
+    }
+
+//themes screen//
+#themesSideBar{
+    -fx-background-color: #f2c8c8;
 }

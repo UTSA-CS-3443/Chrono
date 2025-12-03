@@ -3,6 +3,11 @@
     -fx-text-fill: #F2EFED;
 }
 
+// text //
+.label{
+    -fx-text-fill: white;
+}
+
 // background //
 .root{
     -fx-background-color: #38383B;
@@ -81,16 +86,20 @@
 #sideBar > .button{
     -fx-background-color: transparent;
     -fx-background-radius: 0px;
+    -fx-text-fill; white;
 }
 #sideBar > .button:hover{
     -fx-background-color: #9a989c;
     -fx-background-radius: 0px;
+    -fx-text-fill; white;
 }
 
 #header{
     -fx-background-color: #171717;
 }
-
+#screenLabel{
+    -fx-text-fill: #FFFFFF;
+}
 // Text Fields //
 .text-field{
     -fx-background-color: #7D7880 ;
@@ -107,6 +116,15 @@
 .task-checkbox{
     -fx-color: #7D7880;
     -fx-font-size: 16px;
+}
+.task-card.selected{
+    -fx-background-color: #7D7880;
+}
+.task-title.selected{
+    -fx-text-fill: #FFFFFF;
+}
+.date-label.selected{
+    -fx-text-fill: #FFFFFF;
 }
 #checklistView{
     -fx-background-color: #38383B;

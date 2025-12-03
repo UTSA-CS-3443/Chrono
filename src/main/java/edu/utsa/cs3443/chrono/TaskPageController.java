@@ -125,15 +125,29 @@ public class TaskPageController {
 
             titleLabel = new Label();
             titleLabel.setFont(Font.font("System", FontWeight.BOLD, 16));
+            titleLabel.getStyleClass().add("task-title");
 
             dateLabel = new Label();
             dateLabel.setFont(Font.font("System", 12));
-            dateLabel.setTextFill(Color.web("#555555"));
+            dateLabel.getStyleClass().add("date-label");
+
 
             textBox = new VBox(5, titleLabel, dateLabel);
             HBox.setHgrow(textBox, Priority.ALWAYS);
 
             rootBox.getChildren().addAll(checkBox, textBox);
+
+            selectedProperty().addListener((obs, wasSelected, isSelected) -> {
+                if (isSelected) {
+                    rootBox.getStyleClass().add("selected");
+                    titleLabel.getStyleClass().add("selected");
+                    dateLabel.getStyleClass().add("selected");
+                } else {
+                    rootBox.getStyleClass().remove("selected");
+                    titleLabel.getStyleClass().remove("selected");
+                    dateLabel.getStyleClass().remove("selected");
+                }
+            });
         }
 
         @Override
