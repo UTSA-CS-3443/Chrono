@@ -82,12 +82,12 @@
 #sideBar > .button {
     -fx-background-color: transparent;
     -fx-background-radius: 0px;
-    -fx-text-fill; white;
+    -fx-text-fill: white;
 }
 #sideBar > .button:hover {
     -fx-background-color: #e68a8a;
     -fx-background-radius: 0px;
-    -fx-text-fill; white;
+    -fx-text-fill: white;
 }
 
 #header {
