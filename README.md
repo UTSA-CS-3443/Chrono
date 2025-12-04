@@ -31,7 +31,7 @@ Run (IntelliJ is recommended)
 
 IntelliJ run configuration (JavaFX details)
 
-- If you run the application directly from IntelliJ you may need to add JavaFX VM options so the Java runtime can find the JavaFX modules.
+- If you run the application directly from IntelliJ you will need to add JavaFX VM options so the Java runtime can find the JavaFX modules.
 - Create or edit a Run Configuration for the main class `edu.utsa.cs3443.chrono.ChronoApplication` and set:
 
   - **Project SDK**: your installed JDK (match what's in your `pom.xml` if possible).
@@ -42,13 +42,13 @@ IntelliJ run configuration (JavaFX details)
   Example (Windows)
 
   ```text
-  --module-path "C:\path\to\jdk;target\classes" --add-modules javafx.controls,javafx.fxml
+  --module-path "C:\path\to\jdk\lib;target\classes" --add-modules javafx.controls,javafx.fxml
   ```
 
   Example (macOS / Linux):
 
   ```text
-  --module-path "/Users/you/Downloads/javafx-sdk-24.0.2/lib:target/classes" --add-modules javafx.controls,javafx.fxml
+  --module-path "/path/to/jdk/lib:target/classes" --add-modules javafx.controls,javafx.fxml
   ```
 
 - Alternatively: use `./mvnw javafx:run` which configures JavaFX automatically via the Maven plugin.
