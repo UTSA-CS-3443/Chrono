@@ -4,47 +4,30 @@ import edu.utsa.cs3443.chrono.models.Cosmetic;
 import edu.utsa.cs3443.chrono.models.ShopModel;
 import edu.utsa.cs3443.chrono.models.Theme;
 import edu.utsa.cs3443.chrono.models.UnlockableManager;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
-
-import javax.swing.text.Element;
-import javax.swing.text.html.ImageView;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.*;
 
+/**
+ * Controller for the Store Screen.
+ * Handles purchasing themes and cosmetics, and managing daily tasks.
+ */
 public class store_viewController{
     public ProgressBar midnightProgress;
 
-    @FXML
-    public Label coinCounter;
-    @FXML
-    private Label timeLabel;
-    @FXML
-    private FlowPane themeButtonBox;
-    @FXML
-    private FlowPane cosmeticButtonBox;
+    @FXML public Label coinCounter;
+    @FXML private Label timeLabel;
+    @FXML private FlowPane themeButtonBox;
+    @FXML private FlowPane cosmeticButtonBox;
 
-    // These buttons do not do anything when clicked, they are just to show the user what needs to be done
-    @FXML
-    private Button task1;
-    @FXML
-    private Button task2;
-    @FXML
-    private Button task3;
-
-
+    @FXML private Button task1;
+    @FXML private Button task2;
+    @FXML private Button task3;
 
     private final ArrayList<String> dailyTasks = new ArrayList<String>();
     private ArrayList<Theme> themeList;
@@ -90,35 +73,37 @@ public class store_viewController{
         }
     }
 
+    /**
+     * Creates buttons for cosmetic items. Only displays items that have NOT been unlocked.
+     */
     @FXML
     public void createCosmeticButtons(){
         for(Cosmetic cosmetic : cosmeticsList) {
-            Button button = new Button(cosmetic.getName());
+            if(!cosmetic.isUnlocked()) {
+                Button button = new Button(cosmetic.getName());
 
+                String imageUrl = getClass().getResource("images/" + cosmetic.getImageFilePath()).toExternalForm();
 
-            String imageUrl = getClass().getResource("images/" + cosmetic.getImageFilePath()).toExternalForm();
+                button.setStyle(
+                        "-fx-background-image: url('" + imageUrl + "');" + "-fx-background-size: cover;" + "-fx-background-position: center;" + "-fx-background-repeat: no-repeat;"
+                );
 
-            button.setStyle(
-                    "-fx-background-image: url('" + imageUrl + "');" + "-fx-background-size: cover;" + "-fx-background-position: center;" + "-fx-background-repeat: no-repeat;"
-            );
+                button.setText("LOCKED - " + cosmetic.getCost() + " Coins");
 
-            button.setText("LOCKED - " + cosmetic.getCost() + " Coins");
+                button.setPrefWidth(150);
+                button.setPrefHeight(150);
 
-            button.setPrefWidth(150);
-            button.setPrefHeight(150);
+                button.setOnAction(e->{
+                    if(unlockCosmetic(cosmetic)){
+                        cosmeticButtonBox.getChildren().remove(button);
+                    }
+                });
 
-            button.setOnAction(e->{
-
-                if(unlockCosmetic(cosmetic)){
-                    cosmeticButtonBox.getChildren().remove(button);
-                }
-            });
-
-            cosmeticButtonBox.getChildren().add(button);
+                cosmeticButtonBox.getChildren().add(button);
+            }
         }
     }
 
-    // Reads through dailyTasks.csv and stores the tasks in an arraylist
     private void getDailies(){
         String resourcePath = "/edu/utsa/cs3443/chrono/files/dailyTasks.csv";
 
@@ -130,10 +115,9 @@ public class store_viewController{
                 return;
             }
 
-            // Read the ENTIRE single line (since you have only one line with 6 tasks)
             if (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                String[] tasks = line.split(",");  // Now safe: split only on top-level commas
+                String[] tasks = line.split(",");
 
                 for (String task : tasks) {
                     String trimmed = task.trim();
@@ -142,30 +126,9 @@ public class store_viewController{
                     }
                 }
             }
-
-            System.out.println("Successfully loaded " + dailyTasks.size() + " daily tasks:");
-            dailyTasks.forEach(System.out::println);
-
         } catch (Exception e) {
             System.err.println("Error reading dailyTasks.csv");
             e.printStackTrace();
-        }
-    }
-
-    // Sets the three daily tasks to random tasks in the arraylist
-    private void setDailies(Button task1, Button task2, Button task3){
-        Random random = new Random();
-        Set<Integer> usedIndexes = new HashSet<>();
-        Button[] buttons = {task1, task2, task3};
-
-        for (int i = 0; i < 3; i++) {
-            int index;
-            do {
-                index = random.nextInt(dailyTasks.size());
-            } while (usedIndexes.contains(index)); // ensure no repeat
-
-            usedIndexes.add(index);
-            buttons[i].setText(dailyTasks.get(index));
         }
     }
 
@@ -191,28 +154,22 @@ public class store_viewController{
         }
 
         LocalDate today = LocalDate.now();
-
-        // Check for reset
         boolean needsReset = lastResetDate == null || lastResetDate.equals(today);
 
         if (needsReset) {
-            System.out.println("New day detected! Resetting daily tasks...");
             resetAllTasks();
             saveDailyProgress();
             lastResetDate = today;
         } else {
             loadSavedTaskStates();
         }
-
     }
 
     private File getProgressFile(){
-        // Save in home directory so it is persistent
         String userHome = System.getProperty("user.home");
         return new File(userHome + ".'/chrono" + PROGRESS_FILE);
     }
 
-    // Variables to keep track of tasks
     private boolean task1Completed = false;
     private boolean task2Completed = false;
     private boolean task3Completed = false;
@@ -223,12 +180,10 @@ public class store_viewController{
 
     private void toggleTask(Button btn, String fieldName){
         try{
-            // Toggle boolean
             Field field = this.getClass().getDeclaredField(fieldName);
             boolean newValue = !field.getBoolean(this);
             field.setBoolean(this, newValue);
 
-            // Update button color
             if(newValue){
                 btn.setStyle("-fx-background-color: #00ff88; -fx-text-fill: black; -fx-font-weight: bold;");
             }else{
@@ -270,9 +225,8 @@ public class store_viewController{
 
         String savedDate = props.getProperty("date", "");
         if(!LocalDate.now().toString().equals(savedDate)){
-            resetAllTasks(); // New day
+            resetAllTasks();
         }else{
-            // Restore state
             task1Completed = Boolean.parseBoolean(props.getProperty("task1", "false"));
             task2Completed = Boolean.parseBoolean(props.getProperty("task2", "false"));
             task3Completed = Boolean.parseBoolean(props.getProperty("task3", "false"));
@@ -337,15 +291,14 @@ public class store_viewController{
         return false;
     }
     private boolean unlockCosmetic(Cosmetic cosmetic){
-            if(showPurchaseConfirmation(cosmetic.getName(), cosmetic.getCost())) {
-                um.updateCosmeticUnlock(cosmetic);
-                Alert unlocked = new Alert(Alert.AlertType.INFORMATION);
-                unlocked.setTitle("Cosmetic Unlocked");
-                unlocked.setHeaderText("\"" + cosmetic.getName() + "\" Now Available In Creature Tab");
-                unlocked.showAndWait();
-                return true;
-            }
-            return false;
+        if(showPurchaseConfirmation(cosmetic.getName(), cosmetic.getCost())) {
+            um.updateCosmeticUnlock(cosmetic);
+            Alert unlocked = new Alert(Alert.AlertType.INFORMATION);
+            unlocked.setTitle("Cosmetic Unlocked");
+            unlocked.setHeaderText("\"" + cosmetic.getName() + "\" Now Available In Creature Tab");
+            unlocked.showAndWait();
+            return true;
+        }
+        return false;
     }
 }
-

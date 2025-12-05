@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
@@ -17,7 +18,13 @@
             <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
         </padding>
 
-        <HBox alignment="CENTER_RIGHT">
+        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+            <CheckBox fx:id="showCompletedCheckBox" mnemonicParsing="false" onAction="#handleFilterToggle" text="See Completed Tasks">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </CheckBox>
+
             <Button fx:id="addTaskButton" onAction="#handleAddTask" style="-fx-cursor: hand;" text="Add Task">
                 <font>
                     <Font name="System Bold" size="14.0" />
@@ -51,6 +58,15 @@
         <VBox spacing="15.0" VBox.vgrow="ALWAYS">
 
             <VBox id="taskDetails" alignment="CENTER" spacing="0">
+                <Label text="Task Name" textFill="#333333">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="detailNameField" alignment="CENTER" promptText="Task Name" style="-fx-background-color: transparent;" text="Task Name" />
+            </VBox>
+
+            <VBox id="taskDetails" alignment="CENTER" spacing="0">
                 <Label text="Due Date" textFill="#333333">
                     <font>
                         <Font size="11.0" />
@@ -64,14 +80,6 @@
                         <Font size="11.0" />
                     </font></Label>
                 <TextField fx:id="detailTimeField" alignment="CENTER" promptText="e.g. 1 hour" style="-fx-background-color: transparent;" text="1 hour" />
-            </VBox>
-
-            <VBox id="taskDetails" alignment="CENTER" spacing="0">
-                <Label text="Auto-complete after X minutes" textFill="#333333">
-                    <font>
-                        <Font size="11.0" />
-                    </font></Label>
-                <TextField fx:id="detailAutoCompleteField" alignment="CENTER" promptText="Never" style="-fx-background-color: transparent;" text="Never" />
             </VBox>
 
             <VBox id="taskDetails" alignment="CENTER">

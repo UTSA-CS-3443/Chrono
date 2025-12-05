@@ -5,18 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a99ead-55fc-46cd-a8bb-b187f22f2698" name="Changes" comment="updated theme screen, integrated dark and green themes">
-      <change afterPath="$PROJECT_DIR$/data/themes.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/Theme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/Unlockable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/models/UnlockableManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/light.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/pink.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/red.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/s.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/images/Creature_Boots_Equipped.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/images/Creature_Hat_Equipped.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/images/Creature_Shirt_Equipped.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/images/Creature_WizardHat_Equipped.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ThemesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/ThemesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css/dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/themes_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/themes_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cosmetics.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/cosmetics.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/tasks.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/themes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/themes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/totalCoins.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/totalCoins.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/userActiveTheme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/userActiveTheme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/CreatureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/CreatureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TaskPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/TaskPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/store_viewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/utsa/cs3443/chrono/store_viewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/images/Creature_Eating.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/checklist_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/checklist_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/creature_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/layouts/creature_view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,12 +49,12 @@
     &quot;assignee&quot;: &quot;Matt-Egg&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/UTSA-CS-3443/Chrono.git&quot;,
-    &quot;accountId&quot;: &quot;0c10f2ab-3bce-413f-a195-208ab3e8b84f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/UTSA-CS-3443/Chrono.git",
+    "accountId": "9ae27155-db82-4e61-81a3-7aad88a97095"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -86,7 +90,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Matthew/IdeaProjects/Chrono&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cws12/Documents/UTSA/Fall_2025/Applications/GroupProject/Chrono/src/main/resources/edu/utsa/cs3443/chrono/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -98,6 +102,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cws12\Documents\UTSA\Fall_2025\Applications\GroupProject\Chrono\src\main\resources\edu\utsa\cs3443\chrono\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono/css" />
       <recent name="$PROJECT_DIR$/src/main/resources/edu/utsa/cs3443/chrono" />
@@ -112,7 +119,7 @@
     <configuration name="ChronoApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.utsa.cs3443.chrono.ChronoApplication" />
       <module name="Chrono" />
-      <option name="VM_PARAMETERS" value="--module-path $USER_HOME$/Downloads/javafx-sdk-24.0.2/lib:target/classes --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path C:\javafx-sdk-24.0.2\lib;target/classes --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
