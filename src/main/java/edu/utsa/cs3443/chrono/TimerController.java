@@ -79,7 +79,14 @@ public class TimerController {
         shop = new ShopModel();
 
         ObservableList<Task> tasks = FXCollections.observableArrayList();
-        tasks.addAll(tm.getTasks());
+
+        //only adds tasks that are not completed
+        for(int i = 0; i < tm.getTasks().size();i++) {
+            if (!tm.getTasks().get(i).isComplete()) {
+                tasks.add(tm.getTasks().get(i));
+            }
+        }
+
         taskList.setItems(tasks);
 
         //every time a task is selected on the list, changed method is called and reassigns the selected task with the chosen one
